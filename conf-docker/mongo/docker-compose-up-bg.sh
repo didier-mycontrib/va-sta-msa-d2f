@@ -1,1 +1,1 @@
-docker-compose up &
+nohup docker-compose up >> logfile.log 2>&1 &
