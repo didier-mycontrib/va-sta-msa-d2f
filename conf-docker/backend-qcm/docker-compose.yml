@@ -1,0 +1,26 @@
+version: '3.4'
+# with docker-compose 2.1 depends-on with condition like service_healthy
+# since docker-compose 3 depends-on with no more condition
+# since version 3 , needs to ajust healthcheck/interval,timeout,retries
+# healthcheck/start_period depuis v4.3
+
+networks:
+  mynetwork:
+    external: true
+    
+services:
+      
+  qcm-api:
+    build : ./qcm-api
+#   image: xyz/backend-qcm-api
+    container_name: backend-qcm-api
+    environment:
+      PORT : 8230
+      MONGODB_URL: mongodb://root:root@mongoDB.host:27017
+    networks:
+      mynetwork:
+        aliases:
+          - backend-qcm-api.api.host
+          - backend-qcm-api.api.service
+    ports:
+      - "8230:8230"

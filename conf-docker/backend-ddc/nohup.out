@@ -1,0 +1,143 @@
+Building ddc-api
+Step 1/9 : FROM node:16
+ ---> 1e151315aa91
+Step 2/9 : WORKDIR /usr/src/app
+ ---> Using cache
+ ---> c6ee75895586
+Step 3/9 : COPY  package*.json  ./
+ ---> Using cache
+ ---> 7a3c8f9afc0d
+Step 4/9 : RUN npm install
+ ---> Using cache
+ ---> 1f40ac1ddc4b
+Step 5/9 : COPY .   .
+ ---> bf63f38f07f2
+Step 6/9 : ENV PORT=8231
+ ---> Running in 2f26df7cd361
+Removing intermediate container 2f26df7cd361
+ ---> 512d2b541d6f
+Step 7/9 : ENV MONGODB_URL=mongodb://root:root@mongoDB.host:27017
+ ---> Running in d2cf9a999cb0
+Removing intermediate container d2cf9a999cb0
+ ---> d3fdc64d2a9d
+Step 8/9 : EXPOSE 8231
+ ---> Running in 234f539240af
+Removing intermediate container 234f539240af
+ ---> 8e377898836b
+Step 9/9 : CMD [ "npm", "start" ]
+ ---> Running in 7b159272d444
+Removing intermediate container 7b159272d444
+ ---> c5238cae2b54
+
+Successfully built c5238cae2b54
+Successfully tagged backend-ddc_ddc-api:latest
+Creating backend-ddc-api ... 
+[1A[2KCreating backend-ddc-api ... [32mdone[0m[1BAttaching to backend-ddc-api
+[36mbackend-ddc-api |[0m 
+[36mbackend-ddc-api |[0m > ddc-api@1.0.0 start
+[36mbackend-ddc-api |[0m > node server.js
+[36mbackend-ddc-api |[0m 
+[36mbackend-ddc-api |[0m mongoDbUrl=mongodb://root:root@mongoDB.host:27017
+[36mbackend-ddc-api |[0m http://localhost:8231
+[36mbackend-ddc-api |[0m Connected correctly to mongodb database
+Killing backend-ddc-api  ... 
+
+ERROR: for backend-ddc-api  ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+Exception in thread Thread-4:
+Traceback (most recent call last):
+  File "site-packages/urllib3/connectionpool.py", line 600, in urlopen
+  File "site-packages/urllib3/connectionpool.py", line 384, in _make_request
+  File "<string>", line 2, in raise_from
+  File "site-packages/urllib3/connectionpool.py", line 380, in _make_request
+  File "http/client.py", line 1331, in getresponse
+  File "http/client.py", line 297, in begin
+  File "http/client.py", line 258, in _read_status
+  File "socket.py", line 586, in readinto
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "site-packages/requests/adapters.py", line 449, in send
+  File "site-packages/urllib3/connectionpool.py", line 638, in urlopen
+  File "site-packages/urllib3/util/retry.py", line 368, in increment
+  File "site-packages/urllib3/packages/six.py", line 685, in reraise
+  File "site-packages/urllib3/connectionpool.py", line 600, in urlopen
+  File "site-packages/urllib3/connectionpool.py", line 384, in _make_request
+  File "<string>", line 2, in raise_from
+  File "site-packages/urllib3/connectionpool.py", line 380, in _make_request
+  File "http/client.py", line 1331, in getresponse
+  File "http/client.py", line 297, in begin
+  File "http/client.py", line 258, in _read_status
+  File "socket.py", line 586, in readinto
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "threading.py", line 916, in _bootstrap_inner
+  File "threading.py", line 864, in run
+  File "compose/cli/log_printer.py", line 214, in watch_events
+  File "compose/project.py", line 493, in yield_loop
+  File "compose/project.py", line 461, in build_container_event
+  File "compose/container.py", line 48, in from_id
+  File "site-packages/docker/utils/decorators.py", line 19, in wrapped
+  File "site-packages/docker/api/container.py", line 755, in inspect_container
+  File "site-packages/docker/utils/decorators.py", line 46, in inner
+  File "site-packages/docker/api/client.py", line 230, in _get
+  File "site-packages/requests/sessions.py", line 537, in get
+  File "site-packages/requests/sessions.py", line 524, in request
+  File "site-packages/requests/sessions.py", line 637, in send
+  File "site-packages/requests/adapters.py", line 498, in send
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+
+Exception in thread Thread-3:
+Traceback (most recent call last):
+  File "site-packages/urllib3/connectionpool.py", line 600, in urlopen
+  File "site-packages/urllib3/connectionpool.py", line 384, in _make_request
+  File "<string>", line 2, in raise_from
+  File "site-packages/urllib3/connectionpool.py", line 380, in _make_request
+  File "http/client.py", line 1331, in getresponse
+  File "http/client.py", line 297, in begin
+  File "http/client.py", line 258, in _read_status
+  File "socket.py", line 586, in readinto
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "site-packages/requests/adapters.py", line 449, in send
+  File "site-packages/urllib3/connectionpool.py", line 638, in urlopen
+  File "site-packages/urllib3/util/retry.py", line 368, in increment
+  File "site-packages/urllib3/packages/six.py", line 685, in reraise
+  File "site-packages/urllib3/connectionpool.py", line 600, in urlopen
+  File "site-packages/urllib3/connectionpool.py", line 384, in _make_request
+  File "<string>", line 2, in raise_from
+  File "site-packages/urllib3/connectionpool.py", line 380, in _make_request
+  File "http/client.py", line 1331, in getresponse
+  File "http/client.py", line 297, in begin
+  File "http/client.py", line 258, in _read_status
+  File "socket.py", line 586, in readinto
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "threading.py", line 916, in _bootstrap_inner
+  File "threading.py", line 864, in run
+  File "compose/cli/log_printer.py", line 166, in tail_container_logs
+  File "compose/cli/log_printer.py", line 197, in wait_on_exit
+  File "compose/container.py", line 281, in wait
+  File "site-packages/docker/utils/decorators.py", line 19, in wrapped
+  File "site-packages/docker/api/container.py", line 1285, in wait
+  File "site-packages/docker/utils/decorators.py", line 46, in inner
+  File "site-packages/docker/api/client.py", line 226, in _post
+  File "site-packages/requests/sessions.py", line 572, in post
+  File "site-packages/requests/sessions.py", line 524, in request
+  File "site-packages/requests/sessions.py", line 637, in send
+  File "site-packages/requests/adapters.py", line 498, in send
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+
+Couldn't connect to Docker daemon at http+docker://localhost - is it running?
+
+If it's at a non-standard location, specify the URL with the DOCKER_HOST environment variable.
