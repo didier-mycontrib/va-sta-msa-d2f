@@ -1,7 +1,7 @@
 #init services and routes with /public and /private conventions
 export HOSTNAME=`hostname`
 export HOST1=www.d-defrance.fr
-export HOST2=d2fc.d-defrance.fr
+export HOST2=d-defrance.fr
 export HOST3=$HOSTNAME
 
 # APP_NAME as first argument of script (ex: xyz-app)
