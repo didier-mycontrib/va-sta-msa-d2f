@@ -1,7 +1,7 @@
 #init services and routes with /public and /private conventions
 export HOSTNAME=`hostname`
 export HOST1=http://www.d-defrance.fr
-export HOST2=d2fc
+export HOST2=d2fc.d-defrance.fr
 export HOST3=$HOSTNAME
 
 # APP_NAME as first argument of script (ex: xyz-app)
@@ -31,5 +31,5 @@ curl -i -X POST \
   --data 'hosts[]=localhost' \
   --data "paths[]=/${APP_NAME}"
   
-# curl http://${HOST_1_2_3}:8000/resa-app/index.html avec 'paths[]=/resa-app' fonctionne avec base/href="." 
-# curl http://localhost:8000/resa-app/index.html
+# curl http://${HOST_1_2_3}:80/resa-app/index.html avec 'paths[]=/resa-app' fonctionne avec base/href="." 
+# curl http://localhost:80/resa-app/index.html

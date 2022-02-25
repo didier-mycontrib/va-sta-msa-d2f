@@ -1,7 +1,7 @@
 #init services and routes with /public and /private conventions
 export HOSTNAME=`hostname`
 export HOST1=http://www.d-defrance.fr
-export HOST2=d2fc
+export HOST2=d2fc.d-defrance.fr
 export HOST3=$HOSTNAME
 
 # API_NAME as first argument of script (ex: xyz-api)
@@ -33,8 +33,8 @@ curl -i -X POST \
   --data "hosts[]=${HOST3}" \
   --data 'hosts[]=localhost' \
   --data "paths[]=/${API_NAME}/public"
-# curl http://${HOST_1_2_3}:8000/${API_NAME}/public/xyz
-# curl http://localhost:8000/${API_NAME}/public/xyz
+# curl http://${HOST_1_2_3}:80/${API_NAME}/public/xyz
+# curl http://localhost:80/${API_NAME}/public/xyz
   
 
 

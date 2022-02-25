@@ -63,11 +63,11 @@ services:
       kong-net:
         aliases:
           - kong-gateway
-          - xyz.mycompany.fun
+          - d2fc.d-defrance.fr
       mynetwork:
         aliases:
           - kong-gateway
-          - xyz.mycompany.fun
+          - d2fc.d-defrance.fr
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:
@@ -97,7 +97,7 @@ services:
       retries: 10
     ports:
       - "8001:8001"
-      - "8000:8000"
+      - "80:8000"
       - "8443:8443"
       - "8444:8444"
     #volumes:

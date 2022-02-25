@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "hashicorp/bionic64"
-  config.vm.hostname = "xyz.mycompany.fun"
+  config.vm.hostname = "d2fc.d-defrance.fr"
   
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
@@ -28,14 +28,14 @@ Vagrant.configure("2") do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. 
   # NOTE: This will enable public access to the opened port
-  config.vm.network "forwarded_port", guest: 8000, host: 8000
+  config.vm.network "forwarded_port", guest: 80, host: 80
   config.vm.network "forwarded_port", guest: 8989, host: 8989
   config.vm.network "forwarded_port", guest: 27017, host: 27018
   config.vm.network "forwarded_port", guest: 8230, host: 8230
   config.vm.network "forwarded_port", guest: 8231, host: 8231
   config.vm.network "forwarded_port", guest: 8232, host: 8232
   config.vm.network "forwarded_port", guest: 8998, host: 8998
-  #8000 (8000 en interne) pour des access via kong-gateway
+  #80 (80 ou 8000 en interne) pour des access via kong-gateway
   #8998 (8998 en interne) pour des access à jenkins console (:8080 inside docker)
   #8989 (8989 en interne) pour des access directs au frontend ng-bs4-app ou resa-app angular
   #8001 (8001 en interne) pour des access à l'admin de kong (utilisé en interne par kong-gui)
