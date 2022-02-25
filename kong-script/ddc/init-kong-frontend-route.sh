@@ -1,6 +1,6 @@
 #init services and routes with /public and /private conventions
 export HOSTNAME=`hostname`
-export HOST1=http://www.d-defrance.fr
+export HOST1=www.d-defrance.fr
 export HOST2=d2fc.d-defrance.fr
 export HOST3=$HOSTNAME
 
