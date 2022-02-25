@@ -21,7 +21,8 @@ curl -i -X POST \
   --data "hosts[]=${HOST2}" \
   --data "hosts[]=${HOST3}" \
   --data 'hosts[]=localhost' \
-  --data "paths[]=/index.html"
+  --data "paths[]=/index.html" \
+  --data "paths[]=/"
   
 # curl http://${HOST_1_2_3}:80/index.html  
 # curl http://localhost:80/index.html
