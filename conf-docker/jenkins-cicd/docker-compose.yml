@@ -19,11 +19,15 @@ services:
       - 8998:8080
       - 50000:50000
     container_name: jenkins-cicd
+    networks:
+      mynetwork: 
+        aliases:
+          - jenkins
     volumes:
       #- /vagrant/jenkins-data:/var/jenkins_home
       - /var/jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/local/bin/docker:/usr/local/bin/docker 
-      - /vagrant/conf-docker:/conf-docker
+      - $HOME/va-sta-msa-d2f/conf-docker:/conf-docker
  
  

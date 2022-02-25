@@ -23,6 +23,8 @@ FRONTEND_URL=http://my-frontends:8989/ddc-app
 sh init-kong-frontend-route.sh ddc-app $FRONTEND_URL
 # curl http://localhost:80/ddc-app/index.html
 
+#NB jenkins ne fonctionne pas bien derriere kong (pas api mais ihm web avec redirections)
+
 ROOT_URL=http://my-frontends:8989/index.html
 sh init-kong-root-route.sh $ROOT_URL
 # curl http://localhost:80/index.html

@@ -7,15 +7,18 @@ Jenkinsfile = default pipeline file in scm/git
 H/2 * * * * 
 for every 2 mn
 ==============
-customer_repo
-pipeline from scm/git : https://github.com/didier-mycontrib/customer_repo , branch */main
+backend-ddc
+pipeline from scm/git : https://github.com/didier-mycontrib/ddc-api , branch */main
 =============
-product_repo
-pipeline from scm/git : https://github.com/didier-mycontrib/product_repo , branch */main
+backend-qcm
+pipeline from scm/git : https://github.com/didier-mycontrib/qcm-api , branch */main
 =============
-reservations
-pipeline from scm/git : https://github.com/didier-mycontrib/reservations, branch */main
+backend-user
+pipeline from scm/git : https://github.com/didier-mycontrib/user-api, branch */main
 =============
-resa-app
-pipeline from scm/git : https://github.com/didier-mycontrib/resa-app, branch */main
+ddc-app
+pipeline from scm/git : https://github.com/didier-mycontrib/ddc-app, branch */main
+====
+qcm-app
+pipeline from scm/git : https://github.com/didier-mycontrib/qcm-app, branch */main
 ====
