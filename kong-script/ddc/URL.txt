@@ -1,29 +1,29 @@
 curl http://d2f2021:80/res-api/public/ressource
-curl http://d2fc.d-defrance.fr:80/res-api/public/ressource
+curl http://d-defrance.fr:80/res-api/public/ressource
 curl http://www.d-defrance.fr:80/res-api/public/ressource
 
 curl http://d2f2021:80/news-api/public/publication
-curl http://d2fc.d-defrance.fr:80/news-api/public/publication
+curl http://d-defrance.fr:80/news-api/public/publication
 curl http://www.d-defrance.fr:80/news-api/public/publication
 
 curl http://d2f2021:80/qcm-api/public/qcm
-curl http://d2fc.d-defrance.fr:80/qcm-api/public/qcm
+curl http://d-defrance.fr:80/qcm-api/public/qcm
 curl http://www.d-defrance.fr:80/qcm-api/public/qcm
 
 curl http://d2f2021:80/user-api/private/user
-curl http://d2fc.d-defrance.fr:80/user-api/private/user
+curl http://d-defrance.fr:80/user-api/private/user
 curl http://www.d-defrance.fr:80/user-api/private/user
 
 curl http://d2f2021:80/ddc-app/index.htm
-curl http://d2fc.d-defrance.fr:80/ddc-app/index.html
+curl http://d-defrance.fr:80/ddc-app/index.html
 curl http://www.d-defrance.fr:80/ddc-app/index.html
 
 curl http://d2f2021:80/qcm-app/index.html
-curl http://d2fc.d-defrance.fr:80/qcm-app/index.html
+curl http://d-defrance.fr:80/qcm-app/index.html
 curl http://www.d-defrance.fr:80/qcm-app/index.html
 
 curl http://d2f2021:80/index.html
-curl http://d2fc.d-defrance.fr:80/index.html
+curl http://d-defrance.fr:80/index.html
 curl http://www.d-defrance.fr:80/index.html
 curl http://www.d-defrance.fr/index.html
 curl http://www.d-defrance.fr

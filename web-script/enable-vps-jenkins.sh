@@ -1,0 +1,1 @@
+sudo ufw-docker allow jenkins-cicd 8080
