@@ -6,5 +6,6 @@ sh delete-kong-api-service-public-private.sh user-api
 
 sh delete-kong-frontend-route.sh ddc-app
 sh delete-kong-frontend-route.sh qcm-app
+sh delete-kong-root-route.sh
 
  
