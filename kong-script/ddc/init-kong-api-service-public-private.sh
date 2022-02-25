@@ -1,5 +1,8 @@
 #init services and routes with /public and /private conventions
 export HOSTNAME=`hostname`
+export HOST1=http://www.d-defrance.fr
+export HOST2=d2fc
+export HOST3=$HOSTNAME
 
 # API_NAME as first argument of script (ex: xyz-api)
 API_NAME=$1
@@ -25,12 +28,12 @@ curl -i -X POST \
 curl -i -X POST \
   --url http://${HOSTNAME}:8001/services/public-${SERVICE_NAME}/routes \
   --data "name=public-${API_NAME}-route" \
-  --data 'hosts[]=xyz.mycompany.fun' \
-  --data 'hosts[]=d2f2021' \
+  --data "hosts[]=${HOST1}" \
+  --data "hosts[]=${HOST2}" \
+  --data "hosts[]=${HOST3}" \
   --data 'hosts[]=localhost' \
   --data "paths[]=/${API_NAME}/public"
-# curl http://xyz.mycompany.fun:8000/${API_NAME}/public/xyz
-# curl http://d2f2021:8000/${API_NAME}/public/xyz
+# curl http://${HOST_1_2_3}:8000/${API_NAME}/public/xyz
 # curl http://localhost:8000/${API_NAME}/public/xyz
   
 
@@ -40,8 +43,9 @@ curl -i -X POST \
 curl -i -X POST \
   --url http://${HOSTNAME}:8001/services/private-${SERVICE_NAME}/routes \
   --data "name=private-${API_NAME}-route" \
-  --data 'hosts[]=xyz.mycompany.fun' \
-  --data 'hosts[]=d2f2021' \
+  --data "hosts[]=${HOST1}" \
+  --data "hosts[]=${HOST2}" \
+  --data "hosts[]=${HOST3}" \
   --data 'hosts[]=localhost' \
   --data "paths[]=/${API_NAME}/private" 
   
