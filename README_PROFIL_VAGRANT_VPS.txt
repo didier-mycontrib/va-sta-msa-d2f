@@ -24,3 +24,9 @@ Dans un contexte/profile "VPS" :
   - le chemin de base sera /home/ubuntu/va-sta-msa-d2f
     et ce chemin de base  pourra etre exprimé via $HOME/va-sta-msa-d2f
   
+--------------
+URL console jenkins: http://www.d-defrance.fr:8998
+apres
+$HOME/va-sta-msa-d2f/web-script/enable-vps-jenkins.sh
+avant
+$HOME/va-sta-msa-d2f/web-script/disable-vps-jenkins.sh

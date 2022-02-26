@@ -1,7 +1,12 @@
 URL jenkins console: localhost:8998 (:8080 habituellement et en interne dans container docker)
 plugins sélectionnés : git et pipeline
 admin/admin (by default)
-
+==============
+http://www.d-defrance.fr:8998
+apres
+$HOME/va-sta-msa-d2f/web-script/enable-vps-jenkins.sh
+avant
+$HOME/va-sta-msa-d2f/web-script/disable-vps-jenkins.sh
 ===============
 Jenkinsfile = default pipeline file in scm/git
 H/2 * * * * 
