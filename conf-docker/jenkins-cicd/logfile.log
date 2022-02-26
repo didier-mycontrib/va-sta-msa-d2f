@@ -1,0 +1,89 @@
+Building jenkins
+Step 1/11 : FROM jenkins/jenkins:lts
+ ---> 306e80c103c6
+Step 2/11 : USER root
+ ---> Using cache
+ ---> 2b19d8c9cf3f
+Step 3/11 : RUN apt-get install -y curl   && curl -sL https://deb.nodesource.com/setup_16.x | bash -   && apt-get install -y nodejs   && curl -L https://www.npmjs.com/install.sh | sh
+ ---> Using cache
+ ---> 29c25037fa4c
+Step 4/11 : USER jenkins
+ ---> Using cache
+ ---> 2b5e412e2ca2
+Step 5/11 : ENV JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+ ---> Using cache
+ ---> 75d663b9c1e5
+Step 6/11 : ENV CASC_JENKINS_CONFIG=/usr/share/jenkins/jenkins.yaml
+ ---> Using cache
+ ---> b80bbb0dfb31
+Step 7/11 : ENV JENKINS_ADMIN_ID=admin
+ ---> Using cache
+ ---> 3c84384c32f0
+Step 8/11 : ENV JENKINS_ADMIN_PASSWORD=admin
+ ---> Using cache
+ ---> bf6ddb8647a5
+Step 9/11 : COPY jenkins.yaml /usr/share/jenkins/jenkins.yaml
+ ---> Using cache
+ ---> 2b6a645220b4
+Step 10/11 : COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
+ ---> Using cache
+ ---> 72bf5a755900
+Step 11/11 : RUN jenkins-plugin-cli --clean-download-directory --list --view-security-warnings -f /usr/share/jenkins/ref/plugins.txt
+ ---> Using cache
+ ---> 3cb7063324b4
+
+Successfully built 3cb7063324b4
+Successfully tagged jenkins-cicd_jenkins:latest
+Creating jenkins-cicd ... 
+[1A[2KCreating jenkins-cicd ... [32mdone[0m[1BAttaching to jenkins-cicd
+[36mjenkins-cicd |[0m Running from: /usr/share/jenkins/jenkins.war
+[36mjenkins-cicd |[0m webroot: EnvVars.masterEnvVars.get("JENKINS_HOME")
+[36mjenkins-cicd |[0m 2022-02-25 18:17:16.363+0000 [id=1]	INFO	org.eclipse.jetty.util.log.Log#initialized: Logging initialized @925ms to org.eclipse.jetty.util.log.JavaUtilLog
+[36mjenkins-cicd |[0m 2022-02-25 18:17:16.494+0000 [id=1]	INFO	winstone.Logger#logInternal: Beginning extraction from war file
+[36mjenkins-cicd |[0m 2022-02-25 18:17:16.535+0000 [id=1]	WARNING	o.e.j.s.handler.ContextHandler#setContextPath: Empty contextPath
+[36mjenkins-cicd |[0m 2022-02-25 18:17:16.660+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: jetty-9.4.43.v20210629; built: 2021-06-30T11:07:22.254Z; git: 526006ecfa3af7f1a27ef3a288e2bef7ea9dd7e8; jvm 11.0.14+9
+[36mjenkins-cicd |[0m 2022-02-25 18:17:17.180+0000 [id=1]	INFO	o.e.j.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
+[36mjenkins-cicd |[0m 2022-02-25 18:17:17.256+0000 [id=1]	INFO	o.e.j.s.s.DefaultSessionIdManager#doStart: DefaultSessionIdManager workerName=node0
+[36mjenkins-cicd |[0m 2022-02-25 18:17:17.269+0000 [id=1]	INFO	o.e.j.s.s.DefaultSessionIdManager#doStart: No SessionScavenger set, using defaults
+[36mjenkins-cicd |[0m 2022-02-25 18:17:17.274+0000 [id=1]	INFO	o.e.j.server.session.HouseKeeper#startScavenging: node0 Scavenging every 660000ms
+[36mjenkins-cicd |[0m 2022-02-25 18:17:18.145+0000 [id=1]	INFO	hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+[36mjenkins-cicd |[0m 2022-02-25 18:17:18.480+0000 [id=1]	INFO	o.e.j.s.handler.ContextHandler#doStart: Started w.@64d43929{Jenkins v2.319.3,/,file:///var/jenkins_home/war/,AVAILABLE}{/var/jenkins_home/war}
+[36mjenkins-cicd |[0m 2022-02-25 18:17:18.564+0000 [id=1]	INFO	o.e.j.server.AbstractConnector#doStart: Started ServerConnector@7c9d8e2{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+[36mjenkins-cicd |[0m 2022-02-25 18:17:18.565+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: Started @3129ms
+[36mjenkins-cicd |[0m 2022-02-25 18:17:18.571+0000 [id=23]	INFO	winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+[36mjenkins-cicd |[0m 2022-02-25 18:17:18.983+0000 [id=29]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+[36mjenkins-cicd |[0m 2022-02-25 18:17:19.842+0000 [id=29]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+[36mjenkins-cicd |[0m WARNING: An illegal reflective access operation has occurred
+[36mjenkins-cicd |[0m WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$2 (file:/var/jenkins_home/war/WEB-INF/lib/guice-4.0.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+[36mjenkins-cicd |[0m WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$2
+[36mjenkins-cicd |[0m WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[36mjenkins-cicd |[0m WARNING: All illegal access operations will be denied in a future release
+[36mjenkins-cicd |[0m 2022-02-25 18:17:27.536+0000 [id=28]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+[36mjenkins-cicd |[0m 2022-02-25 18:17:27.610+0000 [id=28]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+[36mjenkins-cicd |[0m 2022-02-25 18:17:29.315+0000 [id=29]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+[36mjenkins-cicd |[0m 2022-02-25 18:17:29.865+0000 [id=28]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): hudson.model.Hudson.Administer:admin
+[36mjenkins-cicd |[0m 2022-02-25 18:17:29.883+0000 [id=28]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): hudson.model.Hudson.Read:authenticated
+[36mjenkins-cicd |[0m 2022-02-25 18:17:29.964+0000 [id=29]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+[36mjenkins-cicd |[0m 2022-02-25 18:17:30.475+0000 [id=29]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Overall/Administer:admin
+[36mjenkins-cicd |[0m 2022-02-25 18:17:30.489+0000 [id=29]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Overall/Read:authenticated
+[36mjenkins-cicd |[0m 2022-02-25 18:17:31.393+0000 [id=29]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Overall/Administer:admin
+[36mjenkins-cicd |[0m 2022-02-25 18:17:31.395+0000 [id=29]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Overall/Read:authenticated
+[36mjenkins-cicd |[0m 2022-02-25 18:17:31.954+0000 [id=29]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+[36mjenkins-cicd |[0m 2022-02-25 18:17:31.956+0000 [id=29]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+[36mjenkins-cicd |[0m 2022-02-25 18:17:31.966+0000 [id=29]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+[36mjenkins-cicd |[0m 2022-02-25 18:17:32.053+0000 [id=44]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$1: Started Download metadata
+[36mjenkins-cicd |[0m 2022-02-25 18:17:32.077+0000 [id=28]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+[36mjenkins-cicd |[0m 2022-02-25 18:17:32.090+0000 [id=44]	INFO	hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+[36mjenkins-cicd |[0m 2022-02-25 18:17:32.147+0000 [id=22]	INFO	hudson.WebAppMain$3#run: Jenkins is fully up and running
+[36mjenkins-cicd |[0m 2022-02-25 18:17:46.577+0000 [id=44]	INFO	h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tasks.Maven.MavenInstaller
+[36mjenkins-cicd |[0m 2022-02-25 18:17:47.511+0000 [id=44]	INFO	h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tools.JDKInstaller
+[36mjenkins-cicd |[0m 2022-02-25 18:17:47.513+0000 [id=44]	INFO	hudson.util.Retrier#start: Performed the action check updates server successfully at the attempt #1
+[36mjenkins-cicd |[0m 2022-02-25 18:17:47.516+0000 [id=44]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$1: Finished Download metadata. 15,461 ms
+[36mjenkins-cicd |[0m 2022-02-25 18:22:00.085+0000 [id=75]	INFO	h.triggers.SCMTrigger$Runner#run: SCM changes detected in backend-ddc. Triggering  #1
+[36mjenkins-cicd |[0m 2022-02-25 18:22:29.037+0000 [id=133]	INFO	o.j.p.workflow.job.WorkflowRun#finish: backend-ddc #1 completed: SUCCESS
+[36mjenkins-cicd |[0m 2022-02-25 18:27:23.446+0000 [id=194]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$1: Started Periodic background build discarder
+[36mjenkins-cicd |[0m 2022-02-25 18:27:23.448+0000 [id=194]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$1: Finished Periodic background build discarder. 1 ms
+[36mjenkins-cicd |[0m 2022-02-25 18:32:00.885+0000 [id=225]	INFO	h.triggers.SCMTrigger$Runner#run: SCM changes detected in backend-ddc. Triggering  #2
+[36mjenkins-cicd |[0m 2022-02-25 18:32:13.450+0000 [id=257]	INFO	o.j.p.workflow.job.WorkflowRun#finish: backend-ddc #2 completed: SUCCESS
+Stopping jenkins-cicd ... 
+[1A[2KStopping jenkins-cicd ... [32mdone[0m[1BGracefully stopping... (press Ctrl+C again to force)

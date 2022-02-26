@@ -1,0 +1,73 @@
+Building ddc-api
+Step 1/10 : FROM node:16
+ ---> 1e151315aa91
+Step 2/10 : WORKDIR /usr/src/app
+ ---> Using cache
+ ---> c6ee75895586
+Step 3/10 : COPY  package*.json  ./
+ ---> Using cache
+ ---> 88462e5f3c92
+Step 4/10 : RUN npm install pm2 -g
+ ---> Running in fde5459b2625
+[91mnpm[0m[91m [0m[91mWARN[0m[91m [0m[91mdeprecated[0m[91m uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+[0m
+added 182 packages, and audited 183 packages in 12s
+
+12 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+[91mnpm[0m[91m [0m[91mnotice[0m[91m 
+[0m[91mnpm[0m[91m [0m[91mnotice[0m[91m New minor version of npm available! 8.3.1 -> 8.5.2
+[0m[91mnpm[0m[91m [0m[91mnotice[0m[91m Changelog: <https://github.com/npm/cli/releases/tag/v8.5.2>
+[0m[91mnpm[0m[91m [0m[91mnotice[0m[91m Run `npm install -g npm@8.5.2` to update!
+[0m[91mnpm notice 
+[0mRemoving intermediate container fde5459b2625
+ ---> bbb6897c5adb
+Step 5/10 : RUN npm install
+ ---> Running in 444da780353d
+
+added 82 packages, and audited 83 packages in 6s
+
+6 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+Removing intermediate container 444da780353d
+ ---> dd3172bc0a2f
+Step 6/10 : COPY .   .
+ ---> 50b93797a830
+Step 7/10 : ENV PORT=8231
+ ---> Running in b1c1c6411b02
+Removing intermediate container b1c1c6411b02
+ ---> 01acc5ea9ef3
+Step 8/10 : ENV MONGODB_URL=mongodb://root:root@mongoDB.host:27017
+ ---> Running in ed3c529b7693
+Removing intermediate container ed3c529b7693
+ ---> 3e8489fbd83c
+Step 9/10 : EXPOSE 8231
+ ---> Running in 7b2a03544d55
+Removing intermediate container 7b2a03544d55
+ ---> 18c555b7e17a
+Step 10/10 : CMD [ "pm2-runtime", "server.js" ]
+ ---> Running in 38cae5a10556
+Removing intermediate container 38cae5a10556
+ ---> f95ea9cecefb
+
+Successfully built f95ea9cecefb
+Successfully tagged backend-ddc_ddc-api:latest
+Creating backend-ddc-api ... 
+[1A[2KCreating backend-ddc-api ... [32mdone[0m[1BAttaching to backend-ddc-api
+[36mbackend-ddc-api |[0m 2022-02-25T17:59:15: PM2 log: Launching in no daemon mode
+[36mbackend-ddc-api |[0m 2022-02-25T17:59:16: PM2 log: App [server:0] starting in -fork mode-
+[36mbackend-ddc-api |[0m 2022-02-25T17:59:16: PM2 log: App [server:0] online
+[36mbackend-ddc-api |[0m mongoDbUrl=mongodb://root:root@mongoDB.host:27017
+[36mbackend-ddc-api |[0m http://localhost:8231
+[36mbackend-ddc-api |[0m Connected correctly to mongodb database
+Killing backend-ddc-api  ... 
+
+ERROR: for backend-ddc-api  ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+Couldn't connect to Docker daemon at http+docker://localhost - is it running?
+
+If it's at a non-standard location, specify the URL with the DOCKER_HOST environment variable.
+Gracefully stopping... (press Ctrl+C again to force)

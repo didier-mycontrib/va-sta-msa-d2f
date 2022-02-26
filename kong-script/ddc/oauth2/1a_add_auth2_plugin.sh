@@ -1,12 +1,9 @@
 #add key-auth plugin
 
-#export HOSTNAME=localhost
-#export HOSTNAME=xyz.mycompany.fun
-#export HOSTNAME=d2f2021
 export HOSTNAME=`hostname`
 
 curl -i -X POST \
-  --url ${HOSTNAME}:8001/services/private-customer-api-service/plugins/ \
+  --url ${HOSTNAME}:8001/services/private-user-api-service/plugins/ \
   --data "name=oauth2" \
   --data "config.provision_key=my_not_generated_provision_key" \
   --data "config.scopes=read" \

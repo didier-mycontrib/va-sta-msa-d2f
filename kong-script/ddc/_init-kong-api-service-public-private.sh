@@ -1,8 +1,8 @@
 #init services and routes with /public and /private conventions
-export HOSTNAME=`hostname`
-export HOST1=www.d-defrance.fr
-export HOST2=d-defrance.fr
-export HOST3=$HOSTNAME
+
+#env variables to export in parent script:
+#HOSTNAME --> for admin
+#HOST1 , HOST2 , HOST3 --> for route
 
 # API_NAME as first argument of script (ex: xyz-api)
 API_NAME=$1
