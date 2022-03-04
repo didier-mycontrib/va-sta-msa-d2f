@@ -24,3 +24,6 @@ services:
           - backend-ddc-api.api.service
     ports:
       - "8231:8231"
+    volumes:
+      - ./ddc-api:/usr/src/app
+      
