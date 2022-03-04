@@ -1,3 +1,11 @@
+conf-docker/backend-ddc/ddc-api/*
+conf-docker/backend-qcm/qcm-api/*
+conf-docker/backend-user/user-api/*
+conf-docker/frontends-angular/my-frontends/frontends-content/ddc-app
+conf-docker/frontends-angular/my-frontends/frontends-content/qcm-app
+conf-docker/frontends-angular/my-frontends/ddc-app
+conf-docker/frontends-angular/my-frontends/qcm-app
+
 *.box
 .vagrant
 
