@@ -25,5 +25,5 @@ services:
     ports:
       - "8231:8231"
     volumes:
-      - ./ddc-api:/usr/src/app
+      - ../../docker-contents/ddc-api:/usr/src/app
       

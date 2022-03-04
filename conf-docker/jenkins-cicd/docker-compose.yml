@@ -29,5 +29,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/local/bin/docker:/usr/local/bin/docker 
       - $HOME/va-sta-msa-d2f/conf-docker:/conf-docker
+      - $HOME/va-sta-msa-d2f/docker-contents:/docker-contents
+    
  
  
