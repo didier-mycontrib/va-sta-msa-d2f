@@ -1,6 +1,7 @@
-conf-docker/backend-ddc/ddc-api/*
-conf-docker/backend-qcm/qcm-api/*
-conf-docker/backend-user/user-api/*
+#NB: docker-contents will be pull from other git repositories
+docker-contents/*
+*/*.log
+*/.gitignore
 conf-docker/frontends-angular/my-frontends/frontends-content/ddc-app
 conf-docker/frontends-angular/my-frontends/frontends-content/qcm-app
 conf-docker/frontends-angular/my-frontends/ddc-app
@@ -19,7 +20,7 @@ conf-docker/frontends-angular/my-frontends/qcm-app
 */*.jar
 */*.war
 */*.ear
-
+*/package-lock.json
 */node_modules
 **/node_modules
 */target
