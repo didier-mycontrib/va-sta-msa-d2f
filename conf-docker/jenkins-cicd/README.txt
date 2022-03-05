@@ -27,3 +27,9 @@ pipeline from scm/git : https://github.com/didier-mycontrib/ddc-app, branch */ma
 qcm-app
 pipeline from scm/git : https://github.com/didier-mycontrib/qcm-app, branch */main
 ====
+
+Apres quelques tests
+====================
+
+===> ne pas activer jenkins en production (un simple crontab suffit)
+     peaufiner ulterieurement jenkins pour la pre-prod et l'intégration continue
