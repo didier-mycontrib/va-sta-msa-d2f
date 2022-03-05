@@ -90,16 +90,16 @@ services:
     depends_on:
       - kong-migration
       - kong-database
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://kong:8001"]
-      interval: 20s
-      timeout: 20s
-      retries: 10
     ports:
       - "8001:8001"
       - "80:8000"
       - "8443:8443"
       - "8444:8444"
+    #healthcheck:
+      #test: ["CMD", "curl", "-f", "http://kong:8001"]
+      #interval: 20s
+      #timeout: 20s
+      #retries: 10
     #volumes:
      # - ./certs:/certs
    
