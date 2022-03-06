@@ -1,5 +1,5 @@
-#NB: docker-contents will be pull from other git repositories
-docker-contents/*
+#NB: local-git-repositories contents will be clone/pull from other git repositories
+local-git-repositories/*
 */*.log
 */.gitignore
 conf-docker/frontends-angular/my-frontends/frontends-content/ddc-app

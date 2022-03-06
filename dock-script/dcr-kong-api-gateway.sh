@@ -1,6 +1,3 @@
-PWD=`pwd` 
-export BASE=$HOME/va-sta-msa-d2f
-cd $BASE/conf-docker/kong-api-gateway
-#dcr : docker compose rebuild/restart
-sh ./dcr.sh
-cd $PWD
+#adcr : absolute docker compose rebuild/restart (with absolute path)
+sh /base/conf-docker/kong-api-gateway/adcr.sh
+sh /base/dock-script/reinit-vps-gateway-access.sh

@@ -11,7 +11,7 @@ networks:
 services:
       
   ddc-api:
-    build : ../../docker-contents/ddc-api
+    build : ../../local-git-repositories/ddc-api
 #   image: xyz/backend-customer-repo
     container_name: backend-ddc-api
     environment:

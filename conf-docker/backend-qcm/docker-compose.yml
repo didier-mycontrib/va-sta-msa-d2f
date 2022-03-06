@@ -11,7 +11,7 @@ networks:
 services:
       
   qcm-api:
-    build : ../../docker-contents/qcm-api
+    build : ../../local-git-repositories/qcm-api
 #   image: xyz/backend-qcm-api
     container_name: backend-qcm-api
     environment:

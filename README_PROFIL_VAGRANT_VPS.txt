@@ -15,6 +15,9 @@ Au sein de la VM gérée par vagrant
           ln -s /vagrant va-sta-msa-d2f
      lancee au sein de /home/vagrant
      le chemin de base  pourra etre exprimé via $HOME/va-sta-msa-d2f
+- via un lien symbolique construit via la commande
+          ln -s /vagrant /base
+     le chemin de base  pourra etre exprimé via /base
 
 
 ===============================================================================================
@@ -23,6 +26,12 @@ Dans un contexte/profile "VPS" :
   - $HOME vaudra /home/ubuntu
   - le chemin de base sera /home/ubuntu/va-sta-msa-d2f
     et ce chemin de base  pourra etre exprimé via $HOME/va-sta-msa-d2f
+  - via un lien symbolique construit via la commande
+          sudo ln -s /home/ubuntu/va-sta-msa-d2f /base
+     (apres git clone ..../va-sta-msa-d2f dans  $HOME=/home/ubuntu)
+     le chemin de base  pourra etre exprimé via /base
+
+  NB: /base est pratique pour chemins absolus dans crontab
   
 --------------
 URL console jenkins: http://www.d-defrance.fr:8998

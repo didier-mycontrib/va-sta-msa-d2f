@@ -1,6 +1,3 @@
-PWD=`pwd` 
-export BASE=$HOME/va-sta-msa-d2f
-cd $BASE/conf-docker/backend-user
-#dcr : docker compose rebuild/restart
-sh ./dcr.sh
-cd $PWD
+#adcr : absolute docker compose rebuild/restart (with absolute path)
+sh /base/conf-docker/backend-user/adcr.sh
+
