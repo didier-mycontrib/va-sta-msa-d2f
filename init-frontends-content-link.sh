@@ -1,0 +1,1 @@
+sudo ln -s /base/frontend-contents /base/conf-docker/frontends-angular/my-frontends/frontend-contents

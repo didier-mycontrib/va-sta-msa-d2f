@@ -1,0 +1,1 @@
+sudo ln -s /home/ubuntu/va-sta-msa-d2f /base

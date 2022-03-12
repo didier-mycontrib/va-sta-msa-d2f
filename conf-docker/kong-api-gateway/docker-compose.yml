@@ -35,7 +35,7 @@ services:
   # Kong database migration (initialisation)
   #######################################
   kong-migration:
-    image: kong:latest
+    image: kong:2.8.0-ubuntu
     command: "kong migrations bootstrap"
     networks:
       - kong-net
@@ -56,7 +56,7 @@ services:
   #  without certificates , need --insecure of curl (self signed certificates by default)  
   #######################################
   kong-gateway:
-    image: kong:latest
+    image: kong:2.8.0-ubuntu
     restart: always
     container_name: kong-gateway
     networks:
