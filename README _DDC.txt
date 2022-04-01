@@ -32,28 +32,28 @@ curl http://localhost:1337
 via kong-api:
 ===========
 
-curl http://localhost:8000/res-api/public/ressource
-curl http://localhost:8000/news-api/public/publication
-curl http://localhost:8000/user-api/private/user
-curl http://localhost:8000/qcm-api/public/qcm
-curl http://xyz.mycompany.fun:8000/qcm-api/public/qcm
+curl http://localhost:80/res-api/public/ressource
+curl http://localhost:80/news-api/public/publication
+curl http://localhost:80/user-api/private/user
+curl http://localhost:80/qcm-api/public/qcm
+curl http://xyz.mycompany.fun:80/qcm-api/public/qcm
 
 
-curl http://localhost:8000/ddc-app/index.html
-curl http://xyz.mycompany.fun:8000/ddc-app/index.html
+curl http://localhost:80/ddc-app/index.html
+curl http://xyz.mycompany.fun:80/ddc-app/index.html
 --> angular app via kong (ok with WS call)
 
 ============
 avec 127.0.0.1   localhost   xyz.mycompany.fun dans C:\Windows\System32\drivers\etc\hosts
 
-http://xyz.mycompany.fun:8000/ddc-app/index.html
+http://xyz.mycompany.fun:80/ddc-app/index.html
 http://xyz.mycompany.fun:1337
-http://xyz.mycompany.fun:8000/qcm-api/public/qcm
+http://xyz.mycompany.fun:80/qcm-api/public/qcm
 
 
 possible en plus de 
 
-http://localhost:8000/resa-app/index.html
+http://localhost:80/resa-app/index.html
 http://localhost:1337 (konga gui/dashbord) with username=admin , pwd=adminpwd for example
 dans (konga gui/dashbord) , default/direct connection (from konga docker container to kong-gateway container)
 has this URL : http://kong-gateway:8001 -no need of expose :8001 in Vagrantfile)
