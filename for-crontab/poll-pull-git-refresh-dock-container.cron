@@ -1,2 +1,2 @@
-*/2 * * * * /usr/bin/sh /home/ubuntu/va-sta-msa-d2f/web-script/s1.sh
-*/2 * * * * /usr/bin/sh /home/ubuntu/va-sta-msa-d2f/web-script/git-pull-restart-container.sh
+*/2 * * * * /usr/bin/sh /base/dock-script/reinit-vps-gateway-access.sh
+*/2 * * * * /usr/bin/sh /base/web-script/git-pull-restart-container.sh
