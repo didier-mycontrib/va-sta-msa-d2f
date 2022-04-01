@@ -1,2 +1,2 @@
 echo "restarting docker-compose up in background ..." 
-nohup docker-compose --remove-orphans up > logfile.log 2>&1 &
+nohup docker-compose up --remove-orphans > logfile.log 2>&1 &
