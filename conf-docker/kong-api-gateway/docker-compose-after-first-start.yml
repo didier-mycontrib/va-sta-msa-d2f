@@ -18,6 +18,8 @@ services:
     restart: always
     networks:
       - kong-net
+    volumes:
+      - /base/my-docker-volumes/postgresql/data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: kong
       POSTGRES_DB: kong
