@@ -13,6 +13,7 @@ services:
   qcm-api:
     build : ../../local-git-repositories/user-api
 #   image: xyz/backend-user-api
+    restart: always
     container_name: backend-user-api
     environment:
       PORT : 8232

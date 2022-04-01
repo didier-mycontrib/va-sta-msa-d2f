@@ -14,6 +14,7 @@ services:
     build : ../../local-git-repositories/qcm-api
 #   image: xyz/backend-qcm-api
     container_name: backend-qcm-api
+    restart: always
     environment:
       PORT : 8230
       MONGODB_URL: mongodb://root:root@mongoDB.host:27017

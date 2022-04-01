@@ -14,6 +14,7 @@ services:
     build : ../../local-git-repositories/ddc-api
 #   image: xyz/backend-customer-repo
     container_name: backend-ddc-api
+    restart: always
     environment:
       PORT : 8231
       MONGODB_URL: mongodb://root:root@mongoDB.host:27017

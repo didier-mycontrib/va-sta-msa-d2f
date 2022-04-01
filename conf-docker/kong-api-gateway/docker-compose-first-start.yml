@@ -32,10 +32,23 @@ services:
       retries: 3
       
   #######################################
-  # NO Kong database migration (initialisation) 
-  # it's just for FIRST-START !!!!
+  # Kong database migration (initialisation)
   #######################################
-     
+  kong-migration:
+    image: kong:2.8.0-ubuntu
+    command: "kong migrations bootstrap"
+    networks:
+      - kong-net
+    restart: on-failure
+    environment:
+      KONG_PASSWORD: kong
+      KONG_DATABASE: postgres
+      KONG_PG_HOST: kong-database
+      KONG_PG_PASSWORD: kong
+    links:
+      - kong-database
+    depends_on:
+      - kong-database    
       
   #######################################
   # kong-gateway : The API Gateway
@@ -75,6 +88,7 @@ services:
       #KONG_ADMIN_SSL_CERT: /certs/certificate.crt
       #KONG_ADMIN_SSL_CERT_KEY: /certs/certificate.key
     depends_on:
+      - kong-migration
       - kong-database
     ports:
       - "8001:8001"

@@ -14,6 +14,7 @@ services:
   #  image: xyz/my-frontends
     build : ./my-frontends
     container_name : my-frontends
+    restart: always
     ports:
       - "8989:8989"
     volumes:
