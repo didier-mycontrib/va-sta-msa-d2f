@@ -1,0 +1,135 @@
+Pulling postgresqlKong (postgres:15.2)...
+15.2: Pulling from library/postgres
+Digest: sha256:9e3b538a581247a22f8e452d1b797373bb3e1bfae6e3273e9c49b637e080c797
+Status: Downloaded newer image for postgres:15.2
+Creating postgresql_postgresqlKeycloak_1 ... 
+Creating postgresql_postgresqlKong_1     ... 
+[2A[2KCreating postgresql_postgresqlKeycloak_1 ... [32mdone[0m[2B[1A[2KCreating postgresql_postgresqlKong_1     ... [32mdone[0m[1BAttaching to postgresql_postgresqlKeycloak_1, postgresql_postgresqlKong_1
+[36mpostgresqlKeycloak_1  |[0m The files belonging to this database system will be owned by user "postgres".
+[33mpostgresqlKong_1      |[0m The files belonging to this database system will be owned by user "postgres".
+[36mpostgresqlKeycloak_1  |[0m This user must also own the server process.
+[36mpostgresqlKeycloak_1  |[0m 
+[36mpostgresqlKeycloak_1  |[0m The database cluster will be initialized with locale "en_US.utf8".
+[36mpostgresqlKeycloak_1  |[0m The default database encoding has accordingly been set to "UTF8".
+[36mpostgresqlKeycloak_1  |[0m The default text search configuration will be set to "english".
+[36mpostgresqlKeycloak_1  |[0m 
+[33mpostgresqlKong_1      |[0m This user must also own the server process.
+[36mpostgresqlKeycloak_1  |[0m Data page checksums are disabled.
+[33mpostgresqlKong_1      |[0m 
+[36mpostgresqlKeycloak_1  |[0m 
+[36mpostgresqlKeycloak_1  |[0m fixing permissions on existing directory /data/postgres ... ok
+[36mpostgresqlKeycloak_1  |[0m creating subdirectories ... ok
+[36mpostgresqlKeycloak_1  |[0m selecting dynamic shared memory implementation ... posix
+[33mpostgresqlKong_1      |[0m The database cluster will be initialized with locale "en_US.utf8".
+[33mpostgresqlKong_1      |[0m The default database encoding has accordingly been set to "UTF8".
+[33mpostgresqlKong_1      |[0m The default text search configuration will be set to "english".
+[33mpostgresqlKong_1      |[0m 
+[33mpostgresqlKong_1      |[0m Data page checksums are disabled.
+[33mpostgresqlKong_1      |[0m 
+[33mpostgresqlKong_1      |[0m fixing permissions on existing directory /data/postgres ... ok
+[33mpostgresqlKong_1      |[0m creating subdirectories ... ok
+[33mpostgresqlKong_1      |[0m selecting dynamic shared memory implementation ... posix
+[33mpostgresqlKong_1      |[0m selecting default max_connections ... 100
+[36mpostgresqlKeycloak_1  |[0m selecting default max_connections ... 100
+[33mpostgresqlKong_1      |[0m selecting default shared_buffers ... 128MB
+[33mpostgresqlKong_1      |[0m selecting default time zone ... Etc/UTC
+[36mpostgresqlKeycloak_1  |[0m selecting default shared_buffers ... 128MB
+[36mpostgresqlKeycloak_1  |[0m selecting default time zone ... Etc/UTC
+[33mpostgresqlKong_1      |[0m creating configuration files ... ok
+[36mpostgresqlKeycloak_1  |[0m creating configuration files ... ok
+[33mpostgresqlKong_1      |[0m running bootstrap script ... ok
+[36mpostgresqlKeycloak_1  |[0m running bootstrap script ... ok
+[33mpostgresqlKong_1      |[0m performing post-bootstrap initialization ... ok
+[36mpostgresqlKeycloak_1  |[0m performing post-bootstrap initialization ... ok
+[36mpostgresqlKeycloak_1  |[0m syncing data to disk ... ok
+[36mpostgresqlKeycloak_1  |[0m 
+[36mpostgresqlKeycloak_1  |[0m initdb: warning: enabling "trust" authentication for local connections
+[36mpostgresqlKeycloak_1  |[0m initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+[36mpostgresqlKeycloak_1  |[0m 
+[36mpostgresqlKeycloak_1  |[0m Success. You can now start the database server using:
+[36mpostgresqlKeycloak_1  |[0m 
+[36mpostgresqlKeycloak_1  |[0m     pg_ctl -D /data/postgres -l logfile start
+[36mpostgresqlKeycloak_1  |[0m 
+[33mpostgresqlKong_1      |[0m syncing data to disk ... ok
+[33mpostgresqlKong_1      |[0m 
+[33mpostgresqlKong_1      |[0m initdb: warning: enabling "trust" authentication for local connections
+[33mpostgresqlKong_1      |[0m initdb: hint: 
+[33mpostgresqlKong_1      |[0m Success. You can now start the database server using:
+[33mpostgresqlKong_1      |[0m 
+[33mpostgresqlKong_1      |[0m     pg_ctl -D /data/postgres -l logfile start
+[33mpostgresqlKong_1      |[0m 
+[33mpostgresqlKong_1      |[0m You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+[36mpostgresqlKeycloak_1  |[0m waiting for server to start....2023-03-27 14:05:40.232 UTC [47] LOG:  starting PostgreSQL 15.2 (Debian 15.2-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+[33mpostgresqlKong_1      |[0m waiting for server to start....2023-03-27 14:05:40.236 UTC [47] LOG:  starting PostgreSQL 15.2 (Debian 15.2-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:05:40.241 UTC [47] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:05:40.245 UTC [47] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:05:40.270 UTC [50] LOG:  database system was shut down at 2023-03-27 14:05:36 UTC
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:05:40.273 UTC [50] LOG:  database system was shut down at 2023-03-27 14:05:36 UTC
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:05:40.299 UTC [47] LOG:  database system is ready to accept connections
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:05:40.301 UTC [47] LOG:  database system is ready to accept connections
+[36mpostgresqlKeycloak_1  |[0m  done
+[36mpostgresqlKeycloak_1  |[0m server started
+[33mpostgresqlKong_1      |[0m  done
+[33mpostgresqlKong_1      |[0m server started
+[36mpostgresqlKeycloak_1  |[0m CREATE DATABASE
+[36mpostgresqlKeycloak_1  |[0m 
+[36mpostgresqlKeycloak_1  |[0m 
+[36mpostgresqlKeycloak_1  |[0m /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+[36mpostgresqlKeycloak_1  |[0m 
+[33mpostgresqlKong_1      |[0m CREATE DATABASE
+[33mpostgresqlKong_1      |[0m 
+[33mpostgresqlKong_1      |[0m 
+[33mpostgresqlKong_1      |[0m /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+[33mpostgresqlKong_1      |[0m 
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:05:40.678 UTC [47] LOG:  received fast shutdown request
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:05:40.681 UTC [47] LOG:  received fast shutdown request
+[36mpostgresqlKeycloak_1  |[0m waiting for server to shut down....2023-03-27 14:05:40.692 UTC [47] LOG:  aborting any active transactions
+[33mpostgresqlKong_1      |[0m waiting for server to shut down....2023-03-27 14:05:40.696 UTC [47] LOG:  aborting any active transactions
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:05:40.701 UTC [47] LOG:  background worker "logical replication launcher" (PID 53) exited with exit code 1
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:05:40.702 UTC [47] LOG:  background worker "logical replication launcher" (PID 53) exited with exit code 1
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:05:40.702 UTC [48] LOG:  shutting down
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:05:40.704 UTC [48] LOG:  shutting down
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:05:40.717 UTC [48] LOG:  checkpoint starting: shutdown immediate
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:05:40.726 UTC [48] LOG:  checkpoint starting: shutdown immediate
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:05:41.512 UTC [48] LOG:  checkpoint complete: wrote 918 buffers (5.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.030 s, sync=0.717 s, total=0.809 s; sync files=250, longest=0.062 s, average=0.003 s; distance=4217 kB, estimate=4217 kB
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:05:41.517 UTC [47] LOG:  database system is shut down
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:05:41.526 UTC [48] LOG:  checkpoint complete: wrote 918 buffers (5.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.109 s, sync=0.657 s, total=0.821 s; sync files=250, longest=0.078 s, average=0.003 s; distance=4217 kB, estimate=4217 kB
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:05:41.530 UTC [47] LOG:  database system is shut down
+[33mpostgresqlKong_1      |[0m  done
+[33mpostgresqlKong_1      |[0m server stopped
+[33mpostgresqlKong_1      |[0m 
+[33mpostgresqlKong_1      |[0m PostgreSQL init process complete; ready for start up.
+[33mpostgresqlKong_1      |[0m 
+[36mpostgresqlKeycloak_1  |[0m  done
+[36mpostgresqlKeycloak_1  |[0m server stopped
+[36mpostgresqlKeycloak_1  |[0m 
+[36mpostgresqlKeycloak_1  |[0m PostgreSQL init process complete; ready for start up.
+[36mpostgresqlKeycloak_1  |[0m 
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:05:41.643 UTC [1] LOG:  starting PostgreSQL 15.2 (Debian 15.2-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:05:41.646 UTC [1] LOG:  starting PostgreSQL 15.2 (Debian 15.2-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:05:41.649 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:05:41.649 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:05:41.651 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:05:41.652 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:05:41.661 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:05:41.665 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:05:41.684 UTC [63] LOG:  database system was shut down at 2023-03-27 14:05:41 UTC
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:05:41.686 UTC [63] LOG:  database system was shut down at 2023-03-27 14:05:41 UTC
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:05:41.704 UTC [1] LOG:  database system is ready to accept connections
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:05:41.708 UTC [1] LOG:  database system is ready to accept connections
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:10:41.767 UTC [61] LOG:  checkpoint starting: time
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:10:41.768 UTC [61] LOG:  checkpoint starting: time
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:10:45.978 UTC [61] LOG:  checkpoint complete: wrote 44 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.158 s, sync=0.020 s, total=4.211 s; sync files=12, longest=0.004 s, average=0.002 s; distance=252 kB, estimate=252 kB
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:11:09.140 UTC [61] LOG:  checkpoint complete: wrote 272 buffers (1.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=27.201 s, sync=0.134 s, total=27.372 s; sync files=94, longest=0.006 s, average=0.002 s; distance=1818 kB, estimate=1818 kB
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:15:41.232 UTC [61] LOG:  checkpoint starting: time
+[33mpostgresqlKong_1      |[0m 2023-03-27 14:15:45.034 UTC [61] LOG:  checkpoint complete: wrote 38 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.756 s, sync=0.021 s, total=3.802 s; sync files=15, longest=0.003 s, average=0.002 s; distance=270 kB, estimate=1663 kB
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:44:55.197 UTC [145] ERROR:  relation "public.migration_model" does not exist at character 25
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:44:55.197 UTC [145] STATEMENT:  SELECT ID, VERSION FROM public.MIGRATION_MODEL ORDER BY UPDATE_TIME DESC
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:44:57.292 UTC [145] ERROR:  relation "public.databasechangelog" does not exist at character 22
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:44:57.292 UTC [145] STATEMENT:  SELECT COUNT(*) FROM public.databasechangelog
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:44:58.225 UTC [146] ERROR:  relation "public.databasechangeloglock" does not exist at character 22
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:44:58.225 UTC [146] STATEMENT:  SELECT COUNT(*) FROM public.databasechangeloglock
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:44:58.297 UTC [145] ERROR:  relation "public.databasechangelog" does not exist at character 22
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:44:58.297 UTC [145] STATEMENT:  SELECT COUNT(*) FROM public.databasechangelog
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:45:42.459 UTC [61] LOG:  checkpoint starting: time
+[36mpostgresqlKeycloak_1  |[0m 2023-03-27 14:46:32.939 UTC [61] LOG:  checkpoint complete: wrote 498 buffers (3.0%); 1 WAL file(s) added, 0 removed, 0 recycled; write=50.202 s, sync=0.215 s, total=50.481 s; sync files=159, longest=0.012 s, average=0.002 s; distance=3456 kB, estimate=3456 kB

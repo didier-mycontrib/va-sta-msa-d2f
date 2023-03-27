@@ -1,0 +1,23 @@
+Pulling keycloakAuth (quay.io/keycloak/keycloak:20.0.3)...
+20.0.3: Pulling from keycloak/keycloak
+Digest: sha256:b8f2a453a17a244a829fdafdb08dd77f719d3622bc3987c76a81771c0913b882
+Status: Downloaded newer image for quay.io/keycloak/keycloak:20.0.3
+Creating keycloak_keycloakAuth_1 ... 
+[1A[2KCreating keycloak_keycloakAuth_1 ... [32mdone[0m[1BAttaching to keycloak_keycloakAuth_1
+[36mkeycloakAuth_1  |[0m Updating the configuration and installing your custom providers, if any. Please wait.
+[36mkeycloakAuth_1  |[0m 2023-03-27 14:44:47,024 INFO  [io.quarkus.deployment.QuarkusAugmentor] (main) Quarkus augmentation completed in 22142ms
+[36mkeycloakAuth_1  |[0m 2023-03-27 14:44:50,192 INFO  [org.keycloak.quarkus.runtime.hostname.DefaultHostnameProvider] (main) Hostname settings: Base URL: <unset>, Hostname: <request>, Strict HTTPS: false, Path: <request>, Strict BackChannel: false, Admin URL: <unset>, Admin: <request>, Port: -1, Proxied: true
+[36mkeycloakAuth_1  |[0m 2023-03-27 14:44:53,041 WARN  [io.quarkus.agroal.runtime.DataSources] (main) Datasource <default> enables XA but transaction recovery is not enabled. Please enable transaction recovery by setting quarkus.transaction-manager.enable-recovery=true, otherwise data may be lost if the application is terminated abruptly
+[36mkeycloakAuth_1  |[0m 2023-03-27 14:44:54,464 WARN  [org.infinispan.PERSISTENCE] (keycloak-cache-init) ISPN000554: jboss-marshalling is deprecated and planned for removal
+[36mkeycloakAuth_1  |[0m 2023-03-27 14:44:54,515 WARN  [org.infinispan.CONFIG] (keycloak-cache-init) ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+[36mkeycloakAuth_1  |[0m 2023-03-27 14:44:54,582 INFO  [org.infinispan.CONTAINER] (keycloak-cache-init) ISPN000556: Starting user marshaller 'org.infinispan.jboss.marshalling.core.JBossUserMarshaller'
+[36mkeycloakAuth_1  |[0m 2023-03-27 14:44:55,528 INFO  [org.infinispan.CONTAINER] (keycloak-cache-init) ISPN000128: Infinispan version: Infinispan 'Triskaidekaphobia' 13.0.10.Final
+[36mkeycloakAuth_1  |[0m 2023-03-27 14:44:58,300 INFO  [org.keycloak.quarkus.runtime.storage.legacy.liquibase.QuarkusJpaUpdaterProvider] (main) Initializing database schema. Using changelog META-INF/jpa-changelog-master.xml
+[36mkeycloakAuth_1  |[0m 2023-03-27 14:45:03,166 INFO  [org.keycloak.connections.infinispan.DefaultInfinispanConnectionProviderFactory] (main) Node name: node_424150, Site name: null
+[36mkeycloakAuth_1  |[0m 2023-03-27 14:45:03,399 INFO  [org.keycloak.broker.provider.AbstractIdentityProviderMapper] (main) Registering class org.keycloak.broker.provider.mappersync.ConfigSyncEventListener
+[36mkeycloakAuth_1  |[0m 2023-03-27 14:45:03,438 INFO  [org.keycloak.services] (main) KC-SERVICES0050: Initializing master realm
+[36mkeycloakAuth_1  |[0m 2023-03-27 14:45:07,244 INFO  [io.quarkus] (main) Keycloak 20.0.3 on JVM (powered by Quarkus 2.13.6.Final) started in 19.950s. Listening on: http://0.0.0.0:8080
+[36mkeycloakAuth_1  |[0m 2023-03-27 14:45:07,247 INFO  [io.quarkus] (main) Profile dev activated. 
+[36mkeycloakAuth_1  |[0m 2023-03-27 14:45:07,248 INFO  [io.quarkus] (main) Installed features: [agroal, cdi, hibernate-orm, jdbc-h2, jdbc-mariadb, jdbc-mssql, jdbc-mysql, jdbc-oracle, jdbc-postgresql, keycloak, logging-gelf, narayana-jta, reactive-routes, resteasy, resteasy-jackson, smallrye-context-propagation, smallrye-health, smallrye-metrics, vault, vertx]
+[36mkeycloakAuth_1  |[0m 2023-03-27 14:45:08,146 INFO  [org.keycloak.services] (main) KC-SERVICES0009: Added user 'admin' to realm 'master'
+[36mkeycloakAuth_1  |[0m 2023-03-27 14:45:08,165 WARN  [org.keycloak.quarkus.runtime.KeycloakMain] (main) Running the server in development mode. DO NOT use this configuration in production.

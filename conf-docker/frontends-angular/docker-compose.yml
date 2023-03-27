@@ -16,7 +16,7 @@ services:
     container_name : my-frontends
     restart: always
     ports:
-      - "8989:8989"
+      - "8888:8888"
     volumes:
       - /base/local-git-repositories/ddc-app/dist/ddc-app:/usr/src/app/frontends-content/ddc-app
       - /base/local-git-repositories/qcm-app/dist/qcm-app:/usr/src/app/frontends-content/qcm-app

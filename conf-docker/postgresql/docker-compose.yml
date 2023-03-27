@@ -1,0 +1,62 @@
+version: '3.4'
+#NB: -port: host_port:container_port
+
+networks:
+  mynetwork:
+    external: true
+      
+services:
+
+  ###################
+  # postgresqlKong server
+  #NB: will be used by kong-api-gateway
+  ###################
+  postgresqlKong:
+    image: postgres:15.2
+    restart: always
+    volumes:
+     #- postgres-kong:/data/postgres
+      - /var/my-docker-volumes/postgresql-kong/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: kong
+      POSTGRES_PASSWORD: kong
+      POSTGRES_DB: kong
+      PGDATA: /data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      mynetwork:
+        aliases:
+          - postgresqlKong.server.host
+          - postgresqlKong.host
+          - postgresqlKong 
+
+  ###################
+  # postgresqlKong server
+  #NB: will be used by kong-api-gateway
+  ###################
+  postgresqlKeycloak:
+    image: postgres:15.2
+    restart: always
+    volumes:
+     #- postgres-keycloak:/data/postgres
+      - /var/my-docker-volumes/postgresql-keycloak/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: keycloak
+      POSTGRES_DB: keycloak
+      PGDATA: /data/postgres
+    ports:
+      - "5433:5432"
+    networks:
+      mynetwork:
+        aliases:
+          - postgresqlKeycloak.server.host
+          - postgresqlKeycloak.host
+          - postgresqlKeycloak             
+
+#volumes:
+#  postgres-kong:
+#    driver: local  
+#  postgres-keycloak:
+#    driver: local          

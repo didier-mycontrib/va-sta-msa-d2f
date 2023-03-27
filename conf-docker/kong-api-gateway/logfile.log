@@ -1,0 +1,31 @@
+Pulling kong-gateway (kong:3.2.2-ubuntu)...
+3.2.2-ubuntu: Pulling from library/kong
+Digest: sha256:86f9b1e316dcddeb30dc045cedd239d8573bff4d8acbf231f7d11902c1a83adf
+Status: Downloaded newer image for kong:3.2.2-ubuntu
+Creating kong-gateway ... 
+[1A[2KCreating kong-gateway ... [32mdone[0m[1BAttaching to kong-gateway
+[36mkong-gateway    |[0m 2023/03/27 14:10:27 [warn] 1#0: the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /usr/local/kong/nginx.conf:6
+[36mkong-gateway    |[0m nginx: [warn] the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /usr/local/kong/nginx.conf:6
+[36mkong-gateway    |[0m 2023/03/27 14:10:27 [error] 1#0: init_by_lua error: /usr/local/share/lua/5.1/kong/cmd/utils/migrations.lua:20: New migrations available; run 'kong migrations up' to proceed
+[36mkong-gateway    |[0m stack traceback:
+[36mkong-gateway    |[0m 	[C]: in function 'error'
+[36mkong-gateway    |[0m 	/usr/local/share/lua/5.1/kong/cmd/utils/migrations.lua:20: in function 'check_state'
+[36mkong-gateway    |[0m 	/usr/local/share/lua/5.1/kong/init.lua:591: in function 'init'
+[36mkong-gateway    |[0m 	init_by_lua:3: in main chunk
+[36mkong-gateway    |[0m nginx: [error] init_by_lua error: /usr/local/share/lua/5.1/kong/cmd/utils/migrations.lua:20: New migrations available; run 'kong migrations up' to proceed
+[36mkong-gateway    |[0m stack traceback:
+[36mkong-gateway    |[0m 	[C]: in function 'error'
+[36mkong-gateway    |[0m 	/usr/local/share/lua/5.1/kong/cmd/utils/migrations.lua:20: in function 'check_state'
+[36mkong-gateway    |[0m 	/usr/local/share/lua/5.1/kong/init.lua:591: in function 'init'
+[36mkong-gateway    |[0m 	init_by_lua:3: in main chunk
+[33mkong-gateway    |[0m 2023/03/27 14:10:30 [warn] 1#0: the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /usr/local/kong/nginx.conf:6
+[33mkong-gateway    |[0m nginx: [warn] the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /usr/local/kong/nginx.conf:6
+[33mkong-gateway    |[0m 2023/03/27 14:10:30 [notice] 1#0: using the "epoll" event method
+[33mkong-gateway    |[0m 2023/03/27 14:10:30 [notice] 1#0: openresty/1.21.4.1
+[33mkong-gateway    |[0m 2023/03/27 14:10:30 [notice] 1#0: OS: Linux 4.15.0-58-generic
+[33mkong-gateway    |[0m 2023/03/27 14:10:30 [notice] 1#0: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+[33mkong-gateway    |[0m 2023/03/27 14:10:30 [notice] 1#0: start worker processes
+[33mkong-gateway    |[0m 2023/03/27 14:10:30 [notice] 1#0: start worker process 1197
+[33mkong-gateway    |[0m 2023/03/27 14:10:31 [notice] 1197#0: *1 [lua] warmup.lua:104: single_dao(): Preloading 'services' into the core_cache..., context: init_worker_by_lua*
+[33mkong-gateway    |[0m 2023/03/27 14:10:31 [notice] 1197#0: *1 [lua] warmup.lua:145: single_dao(): finished preloading 'services' into the core_cache (in 0ms), context: init_worker_by_lua*
+[33mkong-gateway    |[0m 2023/03/27 14:10:31 [notice] 1197#0: *1 [lua] init.lua:415: every(): [timer-ng] fallback to ngx.timer.every [interval = 86400], context: init_worker_by_lua*
