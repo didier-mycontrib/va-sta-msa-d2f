@@ -3,4 +3,5 @@ https://docs.konghq.com/enterprise/2.5.x/deployment/installation/docker/
 
 ===================
 https://docs.konghq.com/gateway-oss/2.5.x/proxy/
+3.2.x = latest version (mars 2023)
 ===========

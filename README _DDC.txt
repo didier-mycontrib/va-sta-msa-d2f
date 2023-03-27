@@ -2,10 +2,10 @@ Test interne :
 ==============
 frontends-angular:
 
-curl http://localhost:8989/ddc-app/
-curl http://localhost:8989/ddc-app/index.html
-curl http://localhost:8989/qcm-app/
-curl http://localhost:8989/qcm-app/index.html
+curl http://localhost:8888/ddc-app/
+curl http://localhost:8888/ddc-app/index.html
+curl http://localhost:8888/qcm-app/
+curl http://localhost:8888/qcm-app/index.html
 --> angular app (ok sauf parties WS)
 
 curl http://localhost:8230/qcm-api/public/qcm

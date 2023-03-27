@@ -1,0 +1,7 @@
+1) docker , docker-compose installés
+2) lien symbolique /base configuré sur /.../va-sta-msa-d2f
+3) create-mynetwork-docker.sh
+4) postgresql et mongo
+5) kong-api-gateway
+6) les backends
+7) frontends

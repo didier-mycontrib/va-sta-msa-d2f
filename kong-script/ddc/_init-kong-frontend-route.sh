@@ -8,7 +8,7 @@
 APP_NAME=$1
 # SERVICE_NAME as  ${APP_NAME}-frontend-service
 SERVICE_NAME=${APP_NAME}-frontend-service
-# SERVICE_URL as second argument of script (ex: http://my-frontends:8989/resa-app)
+# SERVICE_URL as second argument of script (ex: http://my-frontends:8888/resa-app)
 APP_URL=$2
 
 #register existing upstream frontend (to download) in kong  
