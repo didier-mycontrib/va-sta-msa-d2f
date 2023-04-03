@@ -29,6 +29,7 @@ Vagrant.configure("2") do |config|
   # within the machine from a port on the host machine. 
   # NOTE: This will enable public access to the opened port
   config.vm.network "forwarded_port", guest: 80, host: 80
+  config.vm.network "forwarded_port", guest: 8443, host: 8443
   config.vm.network "forwarded_port", guest: 8888, host: 8888
   config.vm.network "forwarded_port", guest: 8989, host: 8989
   config.vm.network "forwarded_port", guest: 27017, host: 27018
@@ -36,7 +37,8 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 8231, host: 8231
   config.vm.network "forwarded_port", guest: 8232, host: 8232
   config.vm.network "forwarded_port", guest: 8998, host: 8998
-  #80 (80 ou 8000 en interne) pour des access via kong-gateway
+  #80 (80 ou 8000 en interne) pour des access http via kong-gateway
+  #8443ou... (8443ou...) pour des access https via kong-gateway
   #8998 (8998 en interne) pour des access à jenkins console (:8080 inside docker)
   #8888 (8888 en interne) pour des access directs au frontend ng-bs4-app ou resa-app angular
   #8989 (8989 en interne) pour des access directs à keycloak (en mode dev)

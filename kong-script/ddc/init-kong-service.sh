@@ -31,6 +31,11 @@ sh _init-kong-frontend-route.sh ddc-app $FRONTEND_URL
 
 #NB jenkins ne fonctionne pas bien derriere kong (pas api mais ihm web avec redirections)
 
+
+KEYCLOAK_URL=http://keycloakauth:8989
+sh _init-kong-keycloak-route.sh $KEYCLOAK_URL
+# curl http://localhost:80/keycloak
+
 ROOT_URL=http://my-frontends:8888/index.html
 sh _init-kong-root-route.sh $ROOT_URL
 # curl http://localhost:80/index.html

@@ -28,6 +28,13 @@ curl http://www.d-defrance.fr:80/index.html
 curl http://www.d-defrance.fr/index.html
 curl http://www.d-defrance.fr
 
+curl http://d2f2021:80/keycloak
+curl http://d-defrance.fr:80/keycloak
+curl http://localhost:80/keycloak
+curl https://localhost:8443/keycloak
+curl -k https://localhost:8443/keycloak for self-signed certificate
+
+
 ***************************
 documentation et exemples sur plugin oauth2 de kong:
 """"""""""""""""""""""""""""""""""""""""""""""""""""
