@@ -5,7 +5,7 @@
 #HOST1 , HOST2 , HOST3 --> for route
 
 SERVICE_NAME=keycloak-service
-# ROOT_URL as first argument of script (ex: http://keycloakauth:8989)
+# ROOT_URL as first argument of script (ex: http://keycloakauth:8989/keycloak)
 KEYCLOAK_URL=$1
   
 curl -i -X POST \
@@ -13,7 +13,7 @@ curl -i -X POST \
   --data "name=${SERVICE_NAME}" \
   --data "url=${KEYCLOAK_URL}"
   
-#adding a route to access keyclaok realms behind kong
+#adding a route to access keycloak realms behind kong
 curl -i -X POST \
   --url http://${HOSTNAME}:8001/services/${SERVICE_NAME}/routes \
   --data "name=keycloak-route" \

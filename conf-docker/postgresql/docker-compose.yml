@@ -32,28 +32,30 @@ services:
           - postgresqlKong 
 
   ###################
-  # postgresqlKong server
-  #NB: will be used by kong-api-gateway
+  # postgresqlKeycloak server
+  #NB: may be used by keycloak authentication server (oidc/oauth2)
+  #not mandatory with keycloak in dev mode behind reverse_proxy/gateway with ssl termination
+  #now desactivated in this low memory VPS
   ###################
-  postgresqlKeycloak:
-    image: postgres:15.2
-    restart: always
-    volumes:
-     #- postgres-keycloak:/data/postgres
-      - /var/my-docker-volumes/postgresql-keycloak/data:/var/lib/postgresql/data
-    environment:
-      POSTGRES_USER: keycloak
-      POSTGRES_PASSWORD: keycloak
-      POSTGRES_DB: keycloak
-      PGDATA: /data/postgres
-    ports:
-      - "5433:5432"
-    networks:
-      mynetwork:
-        aliases:
-          - postgresqlKeycloak.server.host
-          - postgresqlKeycloak.host
-          - postgresqlKeycloak             
+  #postgresqlKeycloak:
+    #image: postgres:15.2
+    #restart: always
+    #volumes:
+     ##- postgres-keycloak:/data/postgres
+      #- /var/my-docker-volumes/postgresql-keycloak/data:/var/lib/postgresql/data
+    #environment:
+      #POSTGRES_USER: keycloak
+      #POSTGRES_PASSWORD: keycloak
+      #POSTGRES_DB: keycloak
+      #PGDATA: /data/postgres
+    #ports:
+      #- "5433:5432"
+    #networks:
+      #mynetwork:
+        #aliases:
+          #- postgresqlKeycloak.server.host
+          #- postgresqlKeycloak.host
+          #- postgresqlKeycloak             
 
 #volumes:
 #  postgres-kong:

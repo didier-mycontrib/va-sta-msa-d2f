@@ -1,47 +1,31 @@
 Building my-frontends
 Step 1/8 : FROM node:18
-18: Pulling from library/node
-Digest: sha256:c21209748c829660e0b49cbd14d2f9d81ea82ffb02a8a7932ebacf70d01573a3
-Status: Downloaded newer image for node:18
  ---> 1d2e96403c7a
 Step 2/8 : WORKDIR /usr/src/app
- ---> Running in adb79a865be8
-Removing intermediate container adb79a865be8
+ ---> Using cache
  ---> 95bb215157bb
 Step 3/8 : COPY  package*.json  ./
+ ---> Using cache
  ---> ef6c600d7126
 Step 4/8 : RUN npm install
- ---> Running in ddc03e7ba410
-
-added 57 packages, and audited 58 packages in 2s
-
-7 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-[91mnpm[0m[91m [0m[91mnotice[0m[91m 
-[0m[91mnpm[0m[91m [0m[91mnotice[0m[91m New minor version of npm available! 9.5.0 -> 9.6.3
-[0m[91mnpm[0m[91m [0m[91mnotice[0m[91m Changelog: <https://github.com/npm/cli/releases/tag/v9.6.3>
-[0m[91mnpm[0m[91m [0m[91mnotice[0m[91m Run `npm install -g npm@9.6.3` to update!
-[0m[91mnpm[0m[91m [0m[91mnotice[0m[91m 
-[0mRemoving intermediate container ddc03e7ba410
+ ---> Using cache
  ---> 516b6a7c51fa
 Step 5/8 : COPY .   .
- ---> dbe52199df11
-Step 6/8 : ENV PORT=8989
- ---> Running in 79d169c158b4
-Removing intermediate container 79d169c158b4
- ---> 1f83944ffe8a
-Step 7/8 : EXPOSE 8989
- ---> Running in 5db1cf2467f6
-Removing intermediate container 5db1cf2467f6
- ---> 025d7f61d2d8
+ ---> aaa08b137ade
+Step 6/8 : ENV PORT=8888
+ ---> Running in 340201ba1687
+Removing intermediate container 340201ba1687
+ ---> 7c384fa7a169
+Step 7/8 : EXPOSE 8888
+ ---> Running in 70f6e2514b33
+Removing intermediate container 70f6e2514b33
+ ---> a65567d27a6d
 Step 8/8 : CMD [ "npm", "start" ]
- ---> Running in 44d54d62137c
-Removing intermediate container 44d54d62137c
- ---> fa849b6b75f9
+ ---> Running in 3c3a7bd9795d
+Removing intermediate container 3c3a7bd9795d
+ ---> ede9181141d4
 
-Successfully built fa849b6b75f9
+Successfully built ede9181141d4
 Successfully tagged frontends-angular_my-frontends:latest
 Creating my-frontends ... 
 [1A[2KCreating my-frontends ... [32mdone[0m[1BAttaching to my-frontends
@@ -49,57 +33,10 @@ Creating my-frontends ...
 [36mmy-frontends    |[0m > basic-ng-node@1.0.0 start
 [36mmy-frontends    |[0m > node server.js
 [36mmy-frontends    |[0m 
-[36mmy-frontends    |[0m http://localhost:8989
+[36mmy-frontends    |[0m http://localhost:8888
 Killing my-frontends  ... 
 
 ERROR: for my-frontends  ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
-Exception in thread Thread-3:
-Traceback (most recent call last):
-  File "site-packages/urllib3/connectionpool.py", line 600, in urlopen
-  File "site-packages/urllib3/connectionpool.py", line 384, in _make_request
-  File "<string>", line 2, in raise_from
-  File "site-packages/urllib3/connectionpool.py", line 380, in _make_request
-  File "http/client.py", line 1331, in getresponse
-  File "http/client.py", line 297, in begin
-  File "http/client.py", line 258, in _read_status
-  File "socket.py", line 586, in readinto
-ConnectionResetError: [Errno 104] Connection reset by peer
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "site-packages/requests/adapters.py", line 449, in send
-  File "site-packages/urllib3/connectionpool.py", line 638, in urlopen
-  File "site-packages/urllib3/util/retry.py", line 368, in increment
-  File "site-packages/urllib3/packages/six.py", line 685, in reraise
-  File "site-packages/urllib3/connectionpool.py", line 600, in urlopen
-  File "site-packages/urllib3/connectionpool.py", line 384, in _make_request
-  File "<string>", line 2, in raise_from
-  File "site-packages/urllib3/connectionpool.py", line 380, in _make_request
-  File "http/client.py", line 1331, in getresponse
-  File "http/client.py", line 297, in begin
-  File "http/client.py", line 258, in _read_status
-  File "socket.py", line 586, in readinto
-urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "threading.py", line 916, in _bootstrap_inner
-  File "threading.py", line 864, in run
-  File "compose/cli/log_printer.py", line 166, in tail_container_logs
-  File "compose/cli/log_printer.py", line 197, in wait_on_exit
-  File "compose/container.py", line 281, in wait
-  File "site-packages/docker/utils/decorators.py", line 19, in wrapped
-  File "site-packages/docker/api/container.py", line 1285, in wait
-  File "site-packages/docker/utils/decorators.py", line 46, in inner
-  File "site-packages/docker/api/client.py", line 226, in _post
-  File "site-packages/requests/sessions.py", line 572, in post
-  File "site-packages/requests/sessions.py", line 524, in request
-  File "site-packages/requests/sessions.py", line 637, in send
-  File "site-packages/requests/adapters.py", line 498, in send
-requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
-
 Couldn't connect to Docker daemon at http+docker://localhost - is it running?
 
 If it's at a non-standard location, specify the URL with the DOCKER_HOST environment variable.

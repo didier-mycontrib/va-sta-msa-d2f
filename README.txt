@@ -27,7 +27,7 @@ curl http://xyz.mycompany.fun:8989/ng-bs4-app/index.html
 --> angular app via kong
 
 ============
-avec 127.0.0.1   localhost   xyz.mycompany.fun dans C:\Windows\System32\drivers\etc\hosts
+avec 127.0.0.1   localhost   xyz.mycompany.fun ou d2f2021 dans C:\Windows\System32\drivers\etc\hosts
 
 http://xyz.mycompany.fun:8000/ng-bs4-app/index.html
 http://xyz.mycompany.fun:1337

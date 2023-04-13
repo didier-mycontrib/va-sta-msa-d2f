@@ -40,7 +40,7 @@ app.use( "/" , express.static(__dirname+"/frontends-content"));
 //avec dans index.html base href="." plutot que base href="/"
 
 
-let port = process.env.PORT || 8989;
+let port = process.env.PORT || 8888;
 app.listen(port , function () {
   console.log("http://localhost:"+port);
 });

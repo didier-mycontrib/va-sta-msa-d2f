@@ -14,36 +14,49 @@ services:
   # NB: --hostname-url=http://localhost:80/keycloak ou autre très importante
   # pour que les redirections et que le contenu de /.well-known/openid-configuration
   # soient cohérents vis à vis de l'url d'accès à keycloak sur le reverse-proxy / api-gateway)
+  # voir https://www.keycloak.org/server/reverseproxy
+  #
+  # --hostname-url=https://d2f2021:8443/keycloak très/trop précis pour phase de prod seulement
+  # --http-relative-path=/keycloak ou /auth pour que toutes des urls de keycloak commencent par
+  # /keycloak ou /auth (même sans proxy)
+  #
+  #lien avec base postgres un peu testé (opérationnel) mais désactivé pour faible conso mémoire
   ###################
   keycloakauth:
     #image: quay.io/keycloak/keycloak:21.0.1
     image: quay.io/keycloak/keycloak:20.0.3
+    restart: always
+    container_name: keycloak
     ports:
       - "8989:8989"
     environment:
       KEYCLOAK_ADMIN: admin 
-      KEYCLOAK_ADMIN_PASSWORD: admin 
-      #PROXY_ADDRESS_FORWARDING=true
-      #VIRTUAL_HOST=dev-keycloak.mydomain.com
-      #VIRTUAL_PORT=8080
-      #LETSENCRYPT_HOST=dev-keycloak.mydomain.com
+      KEYCLOAK_ADMIN_PASSWORD: admin     
       
     command: 
       - start-dev 
       - --http-port=8989
       - --proxy edge
       - --hostname-strict=false
-      - --hostname-url=http://localhost:80/keycloak
-      # - start
-      - --db=postgres
-      # - --features=token-exchange
-      - --db-url=jdbc:postgresql://postgresqlKeycloak.host:5432/keycloak
-      - --db-username=keycloak
-      - --db-password=keycloak
-      # - --https-key-store-file=server.keystore 
-      # - --https-key-store-password=secret
-    #volumes:
-     # - /base/my-docker-volumes/keycloak/data:/opt/keycloak/data
+      - --hostname-strict-https=false
+      #- --help
+      #- --log-level=debug
+      - --http-relative-path=/keycloak
+      #- --hostname-url=https://d2f2021:8443/keycloak
+      #- --hostname-url=https://www.d-defrance.fr:8443/keycloak
+      #- --hostname-admin-url=https://www.d-defrance.fr:8443/keycloak
+      #- --hostname-strict-backchannel=true
+      #- --hostname-url=http://d2f2021/keycloak
+      #- --hostname-url=http://www.d-defrance.fr/keycloak
+      #- --https-certificate-file=/var/certs/certfile.pem 
+      #- --https-certificate-key-file=/var/certs/keyfile.pem
+      #- --db=postgres
+      #- --db-url=jdbc:postgresql://postgresqlKeycloak.host:5432/keycloak
+      #- --db-username=keycloak
+      #- --db-password=keycloak
+    volumes:
+      - /var/my-docker-volumes/keycloak/data:/opt/keycloak/data
+    #  - /var/certs:/var/certs
     networks:
       mynetwork:
         aliases:
@@ -52,3 +65,7 @@ services:
           - keycloakauth 
     extra_hosts:
       - "host.docker.internal:host-gateway"
+      
+# A ameliorer :      
+# sudo mkdir -p /var/my-docker-volumes/keycloak/data
+# sudo chmod ag+w  /var/my-docker-volumes/keycloak/data      

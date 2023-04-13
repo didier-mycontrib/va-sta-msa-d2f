@@ -29,10 +29,14 @@ curl http://www.d-defrance.fr/index.html
 curl http://www.d-defrance.fr
 
 curl http://d2f2021:80/keycloak
-curl http://d-defrance.fr:80/keycloak
+curl http://www.d-defrance.fr:80/keycloak
 curl http://localhost:80/keycloak
-curl https://localhost:8443/keycloak
-curl -k https://localhost:8443/keycloak for self-signed certificate
+curl https://localhost:443/keycloak ou curl https://localhost/keycloak
+https://localhost:443/keycloak/realms/myrealm/.well-known/openid-configuration
+curl -k https://localhost:443/keycloak for self-signed certificate
+curl -k https://d2f2021:443/keycloak ou curl https://d2f2021:443/keycloak
+curl -k https://www.d-defrance.fr:443/keycloak ou curl https://www.d-defrance.fr:443/keycloak
+
 
 
 ***************************

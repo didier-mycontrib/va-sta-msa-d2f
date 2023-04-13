@@ -16,8 +16,8 @@ RUN npm install
 COPY .   .
 
 #setting ENV-VARIABLE
-ENV PORT=8989
+ENV PORT=8888
 
-EXPOSE 8989
+EXPOSE 8888
 CMD [ "npm", "start" ]
 
