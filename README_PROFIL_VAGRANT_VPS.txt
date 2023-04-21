@@ -34,6 +34,7 @@ Dans un contexte/profile "VPS" :
   NB: /base est pratique pour chemins absolus dans crontab
   
 --------------
+Ancien Jenkins plus activé (trop gourmand et pas indispensable):
 URL console jenkins: http://www.d-defrance.fr:8998
 apres
 $HOME/va-sta-msa-d2f/web-script/enable-vps-jenkins.sh

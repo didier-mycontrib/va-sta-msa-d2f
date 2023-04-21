@@ -28,32 +28,9 @@ curl http://www.d-defrance.fr:80/index.html
 curl http://www.d-defrance.fr/index.html
 curl http://www.d-defrance.fr
 
-curl http://d2f2021:80/keycloak
-curl http://www.d-defrance.fr:80/keycloak
-curl http://localhost:80/keycloak
-curl https://localhost:443/keycloak ou curl https://localhost/keycloak
-https://localhost:443/keycloak/realms/myrealm/.well-known/openid-configuration
-curl -k https://localhost:443/keycloak for self-signed certificate
-curl -k https://d2f2021:443/keycloak ou curl https://d2f2021:443/keycloak
-curl -k https://www.d-defrance.fr:443/keycloak ou curl https://www.d-defrance.fr:443/keycloak
-
-
-
-***************************
-documentation et exemples sur plugin oauth2 de kong:
-""""""""""""""""""""""""""""""""""""""""""""""""""""
-https://docs.konghq.com/hub/kong-inc/oauth2/
-
-
-dans /vagrant/conf-docker/backend-products
-docker-compose down
-docker-compose up --build &
-===============================================
-docker container ls
-dans /vagrant/kong-script/resa
-curl http://localhost:8230/session-api/private/reinit
-curl http://localhost:8230/session-api/public/session
-sh delete-kong-service.sh
-curl http://xyz.mycompany.fun:8000/session-api/public/session
-sh init-kong-service.sh
-curl http://xyz.mycompany.fun:8000/session-api/public/session
+curl http://d2f2021:80/keycloak/realms/master/.well-known/openid-configuration
+curl http://www.d-defrance.fr:80/keycloak/realms/master/.well-known/openid-configuration
+curl http://localhost:80/keycloak/realms/master/.well-known/openid-configuration
+curl -k https://localhost:443/keycloak/realms/master/.well-known/openid-configuration 
+curl -k https://localhost/keycloak/realms/master/.well-known/openid-configuration
+curl -k  for self-signed certificate

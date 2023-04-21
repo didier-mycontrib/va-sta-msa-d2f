@@ -34,7 +34,7 @@ sh _init-kong-frontend-route.sh ddc-app $FRONTEND_URL
 
 KEYCLOAK_URL=http://keycloakauth:8989/keycloak
 sh _init-kong-keycloak-route.sh $KEYCLOAK_URL
-# curl http://localhost:80/keycloak
+# curl http://localhost:80/keycloak/realms/master/.well-known/openid-configuration
 
 ROOT_URL=http://my-frontends:8888/index.html
 sh _init-kong-root-route.sh $ROOT_URL

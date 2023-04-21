@@ -11,12 +11,12 @@ services:
   # keycloak server
   # NB: CPU does not support x86-64-v2 with 21.0.1 , no problem with 20.0.3 and below
   # NB: --proxy edge signifie https du client au reverse-proxy puis http du reverse-proxy à keycloak
-  # NB: --hostname-url=http://localhost:80/keycloak ou autre très importante
+  # NB: --hostname-url=https://www.d-defrance.fr/keycloak ou autre très importante
   # pour que les redirections et que le contenu de /.well-known/openid-configuration
   # soient cohérents vis à vis de l'url d'accès à keycloak sur le reverse-proxy / api-gateway)
+  # la variante --hostname-admin-url est utile pour le bon focntionnement de la console d'admin (bonnes redirections)
   # voir https://www.keycloak.org/server/reverseproxy
   #
-  # --hostname-url=https://d2f2021:8443/keycloak très/trop précis pour phase de prod seulement
   # --http-relative-path=/keycloak ou /auth pour que toutes des urls de keycloak commencent par
   # /keycloak ou /auth (même sans proxy)
   #
@@ -42,12 +42,12 @@ services:
       #- --help
       #- --log-level=debug
       - --http-relative-path=/keycloak
-      #- --hostname-url=https://d2f2021:8443/keycloak
-      #- --hostname-url=https://www.d-defrance.fr:8443/keycloak
-      #- --hostname-admin-url=https://www.d-defrance.fr:8443/keycloak
+      #URL exposée via Kong
+      - --hostname-url=https://www.d-defrance.fr/keycloak
+      - --hostname-admin-url=https://www.d-defrance.fr/keycloak
       #- --hostname-strict-backchannel=true
       #- --hostname-url=http://d2f2021/keycloak
-      #- --hostname-url=http://www.d-defrance.fr/keycloak
+      #pas besoin de certificats dans keycloak en mode edge si certificate.pem dans kong
       #- --https-certificate-file=/var/certs/certfile.pem 
       #- --https-certificate-key-file=/var/certs/keyfile.pem
       #- --db=postgres

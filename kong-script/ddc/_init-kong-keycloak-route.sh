@@ -24,4 +24,4 @@ curl -i -X POST \
   --data "paths[]=/keycloak" 
   
 # curl http://${HOST_1_2_3}:80/keycloak  
-# curl http://localhost:80/keycloak
+# curl http://localhost:80/keycloak/realms/master/.well-known/openid-configuration

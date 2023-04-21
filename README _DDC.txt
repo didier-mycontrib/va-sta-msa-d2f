@@ -24,8 +24,6 @@ curl http://localhost:8232/user-api/private/user
      http://localhost:8232/user-api/private/reinit
 --> json user list 
 
-curl http://localhost:1337
---> konga (open source kong gui)
 
 
 
@@ -44,16 +42,20 @@ curl http://xyz.mycompany.fun:80/ddc-app/index.html
 --> angular app via kong (ok with WS call)
 
 ============
-avec 127.0.0.1   localhost   xyz.mycompany.fun dans C:\Windows\System32\drivers\etc\hosts
-
-http://xyz.mycompany.fun:80/ddc-app/index.html
-http://xyz.mycompany.fun:1337
-http://xyz.mycompany.fun:80/qcm-api/public/qcm
+avec 127.0.0.1   localhost   www.d-defrance.fr dans C:\Windows\System32\drivers\etc\hosts
 
 
-possible en plus de 
+http://www.d-defrance.fr:80/res-api/public/ressource
+http://www.d-defrance.fr:80/news-api/public/publication
+http://www.d-defrance.fr:80/qcm-api/public/qcm
+http://www.d-defrance.fr:80/user-api/private/user
 
-http://localhost:80/resa-app/index.html
-http://localhost:1337 (konga gui/dashbord) with username=admin , pwd=adminpwd for example
-dans (konga gui/dashbord) , default/direct connection (from konga docker container to kong-gateway container)
-has this URL : http://kong-gateway:8001 -no need of expose :8001 in Vagrantfile)
+http://www.d-defrance.fr:80/ddc-app/index.html
+http://www.d-defrance.fr:80/qcm-app/index.html
+
+http://www.d-defrance.fr:80/index.html
+
+http://www.d-defrance.fr:80/keycloak/realms/master/.well-known/openid-configuration
+https://localhost:443/keycloak/realms/master/.well-known/openid-configuration 
+
+
