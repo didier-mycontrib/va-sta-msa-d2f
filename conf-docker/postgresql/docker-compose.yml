@@ -29,7 +29,7 @@ services:
         aliases:
           - postgresqlKong.server.host
           - postgresqlKong.host
-          - postgresqlKong 
+          - postgresqlKong
 
   ###################
   # postgresqlKeycloak server
@@ -55,7 +55,7 @@ services:
         #aliases:
           #- postgresqlKeycloak.server.host
           #- postgresqlKeycloak.host
-          #- postgresqlKeycloak             
+          #- postgresqlKeycloak            
 
 #volumes:
 #  postgres-kong:
