@@ -17,7 +17,7 @@ services:
   # it's just for FIRST-START !!!!
   #######################################
   kong-migration:
-    image: kong:3.2.2-ubuntu
+    image: kong:3.1.1-ubuntu
     command: "kong migrations bootstrap --v --vv"
     networks:
       - mynetwork
