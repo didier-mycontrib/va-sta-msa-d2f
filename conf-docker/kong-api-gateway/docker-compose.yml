@@ -20,7 +20,7 @@ services:
   #######################################
   kong-gateway:
     image: kong:3.2.2-ubuntu
-    command: "kong --v --vv"
+    command: "kong start --v --vv"
     restart: always
     container_name: kong-gateway
     networks:
