@@ -19,7 +19,7 @@ services:
   #  without certificates , need --insecure of curl (self signed certificates by default)  
   #######################################
   kong-gateway:
-    image: kong:3.2.2-ubuntu
+    image: kong:3.2.1-ubuntu
     command: "kong start --v --vv"
     restart: always
     container_name: kong-gateway
@@ -63,5 +63,4 @@ services:
       #retries: 10
     volumes:
       - /var/certs:/certs
-      - /usr/local/kong:/usr/local/kong
    
