@@ -63,4 +63,5 @@ services:
       #retries: 10
     volumes:
       - /var/certs:/certs
+      - /usr/local/kong:/usr/local/kong
    
