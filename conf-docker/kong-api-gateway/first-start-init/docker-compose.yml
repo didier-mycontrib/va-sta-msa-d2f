@@ -18,7 +18,7 @@ services:
   #######################################
   kong-migration:
     image: kong:3.2.2-ubuntu
-    command: "kong migrations bootstrap"
+    command: "kong migrations bootstrap --v --vv"
     networks:
       - mynetwork
     restart: on-failure
