@@ -1,4 +1,4 @@
 echo "************ ddc-app  ***************"
-curl http://localhost:8989/ddc-app/index.html
+curl http://localhost:8888/ddc-app/index.html
 echo "************ qcm-app  ***************"
-curl http://localhost:8989/qcm-app/index.html
+curl http://localhost:8888/qcm-app/index.html
