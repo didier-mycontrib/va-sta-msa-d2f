@@ -22,7 +22,7 @@ curl -i -X POST \
   --data "hosts[]=${HOST3}" \
   --data 'hosts[]=localhost' \
   --data "paths[]=/index.html" \
-  --data "paths[]=/"
+  --data "paths[]=/other"
   
 #  --data "paths[]=/" replaced by --data "paths[]=/other" (just a test)
 # because / may be too much
