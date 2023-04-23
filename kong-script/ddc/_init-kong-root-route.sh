@@ -22,9 +22,9 @@ curl -i -X POST \
   --data "hosts[]=${HOST3}" \
   --data 'hosts[]=localhost' \
   --data "paths[]=/index.html" \
-  --data "paths[]=/"
+  --data "paths[]=/ngr-welcome"
   
-#  --data "paths[]=/" replaced by --data "paths[]=/other" (just a test)
+#  --data "paths[]=/" replaced by --data "paths[]=/ngr-welcome" (just a test)
 # because / may be too much
   
 # curl http://${HOST_1_2_3}:80/index.html  

@@ -4,9 +4,7 @@ export HOST1=www.d-defrance.fr
 export HOST2=d-defrance.fr
 export HOST3=$HOSTNAME
 
-ROOT_URL=http://my-frontends:8888/index.html
-sh _init-kong-root-route.sh $ROOT_URL
-# curl http://localhost:80/index.html
+
 
 API_SERVICE_URL=http://backend-qcm-api.api.host:8230/qcm-api
 sh _init-kong-api-service-public-private.sh qcm-api $API_SERVICE_URL
@@ -40,4 +38,6 @@ KEYCLOAK_URL=http://keycloakauth:8989/keycloak
 sh _init-kong-keycloak-route.sh $KEYCLOAK_URL
 # curl http://localhost:80/keycloak/realms/master/.well-known/openid-configuration
 
-
+ROOT_URL=http://my-frontends:8888/index.html
+sh _init-kong-root-route.sh $ROOT_URL
+# curl http://localhost:80/index.html
