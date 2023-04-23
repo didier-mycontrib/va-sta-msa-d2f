@@ -12,7 +12,7 @@ SERVICE_NAME=${APP_NAME}-frontend-service
 APP_URL=$2
 
 #register existing upstream frontend (to download) in kong  
-#NB: curl http://xyz.mycompany.fun:8989/resa-app/ return index.html of angular app
+#NB: curl http://my-frontends:8888/ddc-app return index.html of angular app
 #my-frontend-resa container has my-frontend-resa network-alias in mynetwork
 #NB: bon fonctionnement avec base/ref="." plutot que "/" dans dist/ng-bs4-app/index.html
 #    et avec chemin WS en "/..." plutot que "./..." du code source des services angular  
