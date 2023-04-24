@@ -39,6 +39,6 @@ sh _init-kong-keycloak-route.sh $KEYCLOAK_URL
 # curl http://localhost:80/keycloak/realms/master/.well-known/openid-configuration
 
 #ROOT_URL=http://my-frontends:8888/index.html
-ROOT_URL=http://my-frontends:8888
-sh _init-kong-root-route.sh $ROOT_URL
+#ROOT_URL=http://my-frontends:8888
+#sh _init-kong-root-route.sh $ROOT_URL
 # curl http://localhost:80/index.html
