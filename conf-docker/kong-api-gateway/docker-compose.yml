@@ -20,7 +20,7 @@ services:
   #######################################
   kong-gateway:
     image: kong:3.1.1-ubuntu
-    #command: "kong start --v --vv"
+    command: "kong start --nginx-conf /var/conf/kong/my-web-index-kong-nginx-template.conf"
     restart: always
     container_name: kong-gateway
     networks:
@@ -50,7 +50,6 @@ services:
       #KONG_ADMIN_SSL_CERT: /certs/certificate.crt
       KONG_ADMIN_SSL_CERT: /certs/certificate.pem
       KONG_ADMIN_SSL_CERT_KEY: /certs/certificate.key
-      KONG_NGINX_HTTP_INCLUDE: /var/conf/kong/my-web-index-redirect.conf
     ports:
       #- "8000:8000"
       - "80:8000"
