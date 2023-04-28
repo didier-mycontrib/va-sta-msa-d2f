@@ -20,7 +20,7 @@ services:
   #######################################
   kong-gateway:
     image: kong:3.1.1-ubuntu
-    command: "kong start -vv -c /var/conf/kong/kong.conf --nginx-conf /var/conf/kong/my-web-index-kong-nginx-template.conf"
+    #command: "kong start -vv -c"
     restart: always
     container_name: kong-gateway
     networks:
@@ -63,5 +63,5 @@ services:
       #retries: 10
     volumes:
       - /var/certs:/certs
-      - /var/conf/kong:/var/conf/kong
+      #- /var/conf/kong:/var/conf/kong
    

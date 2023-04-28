@@ -11,7 +11,7 @@ sh _delete-kong-api-service-public-private.sh user-api
 
 sh _delete-kong-frontend-route.sh ddc-app
 sh _delete-kong-frontend-route.sh qcm-app
-#sh _delete-kong-root-route.sh
+sh _delete-kong-root-route.sh
 sh _delete-kong-keycloak-route.sh
 
  
