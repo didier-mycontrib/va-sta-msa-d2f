@@ -1,0 +1,10 @@
+echo "export keycloak realm"
+export KC_IMAGE=quay.io/keycloak/keycloak:20.0.3
+export REALM=myrealm
+
+docker run --rm \
+           -v /var/my-docker-volumes/keycloak/data:/opt/keycloak/data \
+           -e KEYCLOAK_ADMIN=admin \
+		   -e KEYCLOAK_ADMIN_PASSWORD=admin \
+		   ${KC_IMAGE} \
+           export --dir /opt/keycloak/data/backup/${REALM} --realm ${REALM}

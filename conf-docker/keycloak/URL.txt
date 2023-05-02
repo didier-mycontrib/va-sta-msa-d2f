@@ -1,8 +1,0 @@
-curl http://localhost:8989/keycloak/realms/master/.well-known/openid-configuration
-curl http://d2f2021:8989/keycloak/realms/master/.well-known/openid-configuration
-curl http://www.d-defrance.fr:8989/keycloak/realms/master/.well-known/openid-configuration
-----------
-curl -k https://localhost:443/keycloak/realms/master/.well-known/openid-configuration
-curl -k https://d2f2021:443/keycloak/realms/master/.well-known/openid-configuration
-curl -k https://www.d-defrance.fr:443/keycloak/realms/master/.well-known/openid-configuration
-curl -k https://www.d-defrance.fr:8443/keycloak/realms/master/.well-known/openid-configuration

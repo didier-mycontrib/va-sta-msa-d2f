@@ -1,0 +1,27 @@
+{
+  "realm" : "d2frealm",
+  "users" : [ {
+    "id" : "afdec667-de89-47ce-8f8a-06e90a66e38c",
+    "createdTimestamp" : 1682071666455,
+    "username" : "d2f",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "didier",
+    "lastName" : "Defrance",
+    "email" : "didier@d-defrance.fr",
+    "credentials" : [ {
+      "id" : "657d95c2-d3b7-45c1-80bf-0251fcb9acac",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1682071699317,
+      "secretData" : "{\"value\":\"9nR4P+qLW8de+N1nB/nyEhfkU1zf5I2IcRzTrm4cL/4k3fC5IfgTSym5dk7qq9LmDQXGI3UWqHhHZlK37Kja2w==\",\"salt\":\"IiNB3tavqAvGa2joIVWhxA==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-d2frealm" ],
+    "notBefore" : 0,
+    "groups" : [ "/D2F_ADMIN" ]
+  } ]
+}

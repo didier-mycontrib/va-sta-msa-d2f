@@ -24,6 +24,12 @@ Vagrant.configure("2") do |config|
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
 
+  #NB: to allow symbolic links we must running vagrant as admin
+  #NB: this config is also necessary for docker to follow symlinks on shared folders
+  config.vm.provider "virtualbox" do |v|
+    v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
+  end
+
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. 
   # NOTE: This will enable public access to the opened port
@@ -95,11 +101,15 @@ Vagrant.configure("2") do |config|
   
   #config.vm.provision "shell", path: "xyz.sh"
   #Install the plugin: vagrant plugin install vagrant-docker-compose
-  config.vm.provision :docker
-  config.vm.provision :docker_compose
+  
+  
+  # pour que cette config "vagrant" soit au plus proche de la config "VPS de prod" , plus d'installation automatique de docker-ce et docker-compose
+  # ici , mais scripts à lancer
+  #config.vm.provision :docker
+  #config.vm.provision :docker_compose
+  
   # le réseau interne docker "mynetwork" sera utilisé pour communiquer entre les containers
   # pour que cette config "vagrant" soit au plus proche de la config "VPS de prod" , plus de config "docker-compose" automatique
   # ici , mais scripts à lancer
-  # "kong-script/ddc/init-kong-service.sh"  #a lancer manuellement apres que docker bien en place
 
 end

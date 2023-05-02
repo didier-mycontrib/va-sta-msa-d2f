@@ -4,6 +4,7 @@ pour les parties frontend_angular + backend nodeJs_express_mongoDB du site web d
 2 profiles (contextes d'exécution) différents:
 
 * profil "vagrant / VM_linux_sous_windows" pour tests d'intégration (pré-production)
+  NB: vagrant doit être démarré en tant qu'administrateur pour pouvoir crééer des liens symboliques
 * profil "VPS" pour production simple sur une seule VM hébergée sur le cloud
 
 ===============================================================================================

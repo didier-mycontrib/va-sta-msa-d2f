@@ -1,0 +1,29 @@
+version: '3.4'
+#NB: -port: host_port:container_port
+#NB: dans future V2 , améliorer via volumes et sauvegardes
+
+networks:
+  mynetwork:
+    external: true
+      
+services:
+
+  ###################
+  # # myNginx (for angular frontends and reverse-proxy config)
+  ###################
+  mynginx:
+    #image: nginx:1.24
+    build : ./my-nginx
+    restart: always
+    container_name: myNginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/certs:/certs  
+    networks:
+      mynetwork:
+        aliases:
+          - myNginx.server.host
+          - myNginx.host
+          - myNginx

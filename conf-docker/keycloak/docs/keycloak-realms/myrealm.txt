@@ -1,0 +1,26 @@
+realm pour premiers pas avec keycloak, demo , auth_backend for tp with stable config
+====================================
+https://www.d-defrance.fr/keycloak/realms/myrealm/.well-known/openid-configuration 
+=============================
+myrealm console:
+https://www.d-defrance.fr:443/keycloak/admin/myrealm/console (admin/admin changed in prod mode) 
+
+NB: admin user have realm-admin role (Assign role / Filter by client / realm-management realm-admin)
+
+
+webappclient2 (angular oidc-app):
+===========
+Valid redirect URIs: http://localhost:4200/silent-refresh.html 
+Valid post logout redirect URIs: http://localhost:4200/ngr-logInOut 
+Web origins:       http://localhost:4200 
+ 
+
+anywebappclient:
+==========
+Valid redirect URIs:   http://*
+                       https://*
+
+Valid post logout redirect URIs: http://*
+                                 https://*
+
+Web origins:      *

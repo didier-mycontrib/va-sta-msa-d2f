@@ -1,0 +1,7 @@
+sandboxrealm = realm pour invites (test/guest/sandbox)
+=======================================
+https://www.d-defrance.fr/keycloak/realms/sandboxrealm/.well-known/openid-configuration
+
+sandboxrealm console:
+https://www.d-defrance.fr:443/keycloak/admin/sandboxrealm/console (admin/admin) 
+NB: admin/admin user have realm-admin role (Assign role / Filter by client / realm-management realm-admin)

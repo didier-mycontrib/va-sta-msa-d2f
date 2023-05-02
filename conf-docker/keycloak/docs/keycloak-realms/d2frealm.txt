@@ -1,0 +1,28 @@
+master console: https://www.d-defrance.fr:443/keycloak/admin/master/console (admin/admin changed in prod mode)
+      
+master : https://www.d-defrance.fr/keycloak/realms/master/.well-known/openid-configuration
+       
+**********
+d2frealm  = realm pour www.d-defrance.fr
+=======================
+https://www.d-defrance.fr/keycloak/realms/d2frealm/.well-known/openid-configuration
+
+d2frealm console:
+https://www.d-defrance.fr:443/keycloak/admin/d2frealm/console (admin/admin changed in prod mode)
+
+
+Role : d2fadmin , publisher , user
+Scopes : resource.read + resource.write + resource.delete
+GROUP : D2FADMIN , PUBLISHER , USER
+user: username=d2f email=didier@d-defrance.fr firstName=didier lastName=Defrance (password: d..6.)
+
+NB: admin user have realm-admin role (Assign role / Filter by client / realm-management realm-admin)
+
+------------
+
+d2fclient (angular oidc-app):
+===========
+Valid redirect URIs: http://* et https://* puis http://localhost:4200/silent-refresh.html et https://www.d-defrance.fr/silent-refresh.html
+Valid post logout redirect URIs: http://* et https://* puis  http://localhost:4200/ngr-logInOut , ...
+Web origins:      * puis  http://localhost:4200 , ...
+ 

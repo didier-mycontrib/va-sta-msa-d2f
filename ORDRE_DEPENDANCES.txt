@@ -1,0 +1,33 @@
+1) installer docker-ce via sh install-docker-ce.sh
+   installer docker-compose via sh install-docker-compose.sh
+   installer l'adaptateur par-feu ufw-docker via sh install-ufw-docker.sh
+
+2) lien symbolique /base configuré sur /vagrant ou bien /home/ubuntu/va-sta-msa-d2f
+   en lancant sh init-base-vagrant.sh ou bien sh init-base-vps.sh , si besoin avec sudo
+
+3) se placer dans /base/dock-script
+   sh create-mynetwork-docker.sh
+   sh prepare_volumes_and_symlinks.sh
+
+4) preparer les certificats pour nginx en mode https
+   se placer dans /base/https/gandi_certificates/temp
+   ajouter dans temp le fichier certificate.key depuis la source confidentielle
+   lancer sh move_certificate.sh
+
+5) se placer dans /base/dock-script
+   sh dcr-mongo.sh
+   sh dcr-keycloak.sh
+   sh dcr-my-nginx.sh
+   sh dcr-backend-ddc.sh
+   sh dcr-backend-qcm.sh
+   sh dcr-backend-user.sh
+
+6) restaurer la configuration par défaut des realms de keycloak
+   se placer dans /base/conf-docker/keycloak/backup/backup-copy
+   lancer sh refresh_backup_from_this_copy.sh
+
+7) initialiser certains backends
+
+8) configurer le fire-wall
+
+9) vérifier le bon fonctionnement
