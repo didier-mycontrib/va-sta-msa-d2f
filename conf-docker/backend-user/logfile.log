@@ -1,0 +1,73 @@
+Building qcm-api
+Step 1/10 : FROM node:16
+16: Pulling from library/node
+Digest: sha256:241f152c0dc9d3efcbd6a4426f52dc50fa78f3a63cff55b2419dc2bf48efe705
+Status: Downloaded newer image for node:16
+ ---> 60f45cb5cd45
+Step 2/10 : WORKDIR /usr/src/app
+ ---> Running in 21c9e8c6fbfe
+Removing intermediate container 21c9e8c6fbfe
+ ---> dd5f890e0948
+Step 3/10 : COPY  package*.json  ./
+ ---> 04506fff692d
+Step 4/10 : RUN npm install pm2 -g
+ ---> Running in 7bb4409938c4
+[91mnpm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+[0m[91mnpm notice 
+npm notice New major version of npm available! 8.19.4 -> 9.6.5
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v9.6.5>
+npm notice Run `npm install -g npm@9.6.5` to update!
+npm notice 
+[0m
+added 184 packages, and audited 185 packages in 29s
+
+12 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+Removing intermediate container 7bb4409938c4
+ ---> 82fa2a897162
+Step 5/10 : RUN npm install
+ ---> Running in 2f595f7cb900
+
+added 159 packages, and audited 160 packages in 18s
+
+12 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+Removing intermediate container 2f595f7cb900
+ ---> 36e49baff41b
+Step 6/10 : COPY .   .
+ ---> 954488776201
+Step 7/10 : ENV PORT=8232
+ ---> Running in 1fd515944412
+Removing intermediate container 1fd515944412
+ ---> 9ab05acb45ee
+Step 8/10 : ENV MONGODB_URL=mongodb://root:root@mongoDB.host:27017
+ ---> Running in a8e7fcde6361
+Removing intermediate container a8e7fcde6361
+ ---> 14de231f27d2
+Step 9/10 : EXPOSE 8232
+ ---> Running in 294c95ea8187
+Removing intermediate container 294c95ea8187
+ ---> 2150b0819680
+Step 10/10 : CMD [ "pm2-runtime", "server.js" ]
+ ---> Running in eaf3e6bdedee
+Removing intermediate container eaf3e6bdedee
+ ---> 12cc1a075249
+
+Successfully built 12cc1a075249
+Successfully tagged backend-user_qcm-api:latest
+Creating backend-user-api ... 
+[1A[2KCreating backend-user-api ... [32mdone[0m[1BAttaching to backend-user-api
+[36mbackend-user-api |[0m 2023-05-03T08:11:56: PM2 log: Launching in no daemon mode
+[36mbackend-user-api |[0m 2023-05-03T08:11:56: PM2 log: App [server:0] starting in -fork mode-
+[36mbackend-user-api |[0m 2023-05-03T08:11:56: PM2 log: App [server:0] online
+[36mbackend-user-api |[0m mongoDbUrl=mongodb://root:root@mongoDB.host:27017
+[36mbackend-user-api |[0m (node:17) [MONGOOSE] DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7. Use `mongoose.set('strictQuery', false);` if you want to prepare for this change. Or use `mongoose.set('strictQuery', true);` to suppress this warning.
+[36mbackend-user-api |[0m (Use `node --trace-deprecation ...` to show where the warning was created)
+[36mbackend-user-api |[0m http://localhost:8232
+[36mbackend-user-api |[0m Connected correctly to mongodb database
+[36mbackend-user-api |[0m POST login,login à verifier={"username":"didier","password":"pwd","roles":"admin"}
+[36mbackend-user-api |[0m cannot retreive KongOAuth2PluginToken

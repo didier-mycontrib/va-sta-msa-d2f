@@ -1,0 +1,1 @@
+sudo ln -s  /base/local-git-repositories/ddc-app/dist/ddc-app /base/conf-docker/myNginx/my-nginx/ddc-app  

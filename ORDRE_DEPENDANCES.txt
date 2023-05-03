@@ -1,9 +1,11 @@
-1) installer docker-ce via sh install-docker-ce.sh
+1) lien symbolique /base configuré sur /vagrant ou bien /home/ubuntu/va-sta-msa-d2f
+   en lancant sudo sh init-base-vagrant.sh ou bien sudo sh init-base-vps.sh , si besoin avec sudo
+
+2) installer docker-ce via sh install-docker-ce.sh
    installer docker-compose via sh install-docker-compose.sh
    installer l'adaptateur par-feu ufw-docker via sh install-ufw-docker.sh
 
-2) lien symbolique /base configuré sur /vagrant ou bien /home/ubuntu/va-sta-msa-d2f
-   en lancant sh init-base-vagrant.sh ou bien sh init-base-vps.sh , si besoin avec sudo
+se déconnecter et se reconnecter pour avoir tous les droits d'accès nécessaires
 
 3) se placer dans /base/dock-script
    sh create-mynetwork-docker.sh
@@ -12,22 +14,55 @@
 4) preparer les certificats pour nginx en mode https
    se placer dans /base/https/gandi_certificates/temp
    ajouter dans temp le fichier certificate.key depuis la source confidentielle
+   (nano certificate.key , copier/coler , ctrl-O , Ctrl-X )
    lancer sh move_certificate.sh
 
-5) se placer dans /base/dock-script
+5) récupérer via git le contenu de /base/local-git-repositories
+	NB: /local-git-repositories/* figure dans .gitignore du référentiel git structurel  
+	pour cela, se placer dans /base/web-script et lancer sh init-local-git-reporitories.sh
+	puis lancer sh init-frontends-content-link-on-vps.sh
+	ou bien sh copy-frontends-content-if-no-symlink.sh sur environnement vagrant
+
+6) Démarrer tous les containers "docker"
+   se placer dans /base/dock-script
    sh dcr-mongo.sh
    sh dcr-keycloak.sh
    sh dcr-my-nginx.sh
    sh dcr-backend-ddc.sh
    sh dcr-backend-qcm.sh
    sh dcr-backend-user.sh
+   ou bien
+   sh dcr-all.sh
+   attendre / vérifier que tout se télécharge et démarre bien (plusieurs secondes ou bien plusieurs minutes)
+   via docker image ls 
+   et docker container ls
 
-6) restaurer la configuration par défaut des realms de keycloak
+7) restaurer la configuration par défaut des realms de keycloak
    se placer dans /base/conf-docker/keycloak/backup/backup-copy
    lancer sh refresh_backup_from_this_copy.sh
+   se placer dans /base/conf-docker/keycloak/backup (via cd ..)
+   et lancer sh import-all-realms.sh
 
-7) initialiser certains backends
+8) initialiser certains backends (jeux de données initial)
+  se placer dans /base/web-script et lancer 
+  sh init-ddc-data.sh
+  sh init-qcm-data.sh
+  sh init-user-data.sh
 
-8) configurer le fire-wall
+9) configurer si besoin le fire-wall (en mode compatibilité docker):
+/base/reinit-vps-gateway-access.sh
+et ...
 
-9) vérifier le bon fonctionnement
+10) vérifier le bon fonctionnement
+De l'intérieur:
+-------------
+
+De l'extérieur: 
+-------------- 
+https://www.d-defrance.fr/keycloak/realms/sandboxrealm/.well-known/openid-configuration
+https://www.d-defrance.fr:443/keycloak/admin/sandboxrealm/console (admin/admin) 
+https://www.d-defrance.fr/keycloak/realms/myrealm/.well-known/openid-configuration
+https://www.d-defrance.fr/keycloak/realms/d2frealm/.well-known/openid-configuration
+https://www.d-defrance.fr
+ 
+

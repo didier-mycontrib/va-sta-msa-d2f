@@ -7,7 +7,7 @@ sudo systemctl restart ufw
 sudo ufw status numbered
 sudo ufw allow ssh
 sudo ufw allow http
-sudo ufw enable
+echo "y" | sudo ufw enable
 sudo ufw status numbered
 sudo systemctl enable ufw 
 
