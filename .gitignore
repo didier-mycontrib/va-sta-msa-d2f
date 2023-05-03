@@ -1,6 +1,8 @@
 #NB: local-git-repositories contents will be clone/pull from other git repositories
 local-git-repositories/*
+conf-docker/myNginx/my-nginx/ddc-app
 conf-docker/myNginx/my-nginx/ddc-app/*
+conf-docker/myNginx/my-nginx/qcm-app
 conf-docker/myNginx/my-nginx/qcm-app/*
 */*.log
 */.gitignore
