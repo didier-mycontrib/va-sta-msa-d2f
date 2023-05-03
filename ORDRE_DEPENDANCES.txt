@@ -20,8 +20,7 @@ se déconnecter et se reconnecter pour avoir tous les droits d'accès nécessair
 5) récupérer via git le contenu de /base/local-git-repositories
 	NB: /local-git-repositories/* figure dans .gitignore du référentiel git structurel  
 	pour cela, se placer dans /base/web-script et lancer sh init-local-git-reporitories.sh
-	puis lancer sh init-frontends-content-link-on-vps.sh
-	ou bien sh copy-frontends-content-if-no-symlink.sh sur environnement vagrant
+	puis lancer sh copy-frontends-content.sh
 
 6) Démarrer tous les containers "docker"
    se placer dans /base/dock-script
