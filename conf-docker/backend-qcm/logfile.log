@@ -69,3 +69,10 @@ Creating backend-qcm-api ...
 [36mbackend-qcm-api |[0m (Use `node --trace-deprecation ...` to show where the warning was created)
 [36mbackend-qcm-api |[0m http://localhost:8230
 [36mbackend-qcm-api |[0m Connected correctly to mongodb database
+Stopping backend-qcm-api ... 
+
+ERROR: for backend-qcm-api  ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+Couldn't connect to Docker daemon at http+docker://localhost - is it running?
+
+If it's at a non-standard location, specify the URL with the DOCKER_HOST environment variable.
+Gracefully stopping... (press Ctrl+C again to force)

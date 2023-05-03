@@ -72,3 +72,10 @@ Creating myNginx ...
 [36mmyNginx    |[0m 10.0.2.2 - - [03/May/2023:10:03:52 +0000] "POST /keycloak/realms/d2frealm/login-actions/authenticate?session_code=kZz5OVod9cWfts9YlhKZ5y-ON6DLHkFYidzVCWc1_7w&execution=03c02090-cc7f-4138-a96e-9121ab900971&client_id=d2fclient&tab_id=D8YQsyK-k0g HTTP/1.1" 302 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/112.0" "-"
 [36mmyNginx    |[0m 10.0.2.2 - - [03/May/2023:10:03:52 +0000] "GET /ddc-app/silent-refresh.html?state=LUxRQTlRQTlGTE10fnB5ZWVEbVpMcUZ1azIwM2M4QUMzdWdtcFo1d2FEeUxt&session_state=8debd111-165a-415e-81e1-5a9a94d60773&code=d1f53e91-0f8e-4379-835c-bab85480f300.8debd111-165a-415e-81e1-5a9a94d60773.e4a11a7f-65ec-4659-9242-5b61c74c8e15 HTTP/1.1" 200 1195 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/112.0" "-"
 [36mmyNginx    |[0m 10.0.2.2 - - [03/May/2023:10:03:52 +0000] "POST /keycloak/realms/d2frealm/protocol/openid-connect/token HTTP/1.1" 200 4040 "https://www.d-defrance.fr/ddc-app/ngr-logInOut" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/112.0" "-"
+Stopping myNginx ... 
+
+ERROR: for myNginx  ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+Couldn't connect to Docker daemon at http+docker://localhost - is it running?
+
+If it's at a non-standard location, specify the URL with the DOCKER_HOST environment variable.
+Gracefully stopping... (press Ctrl+C again to force)

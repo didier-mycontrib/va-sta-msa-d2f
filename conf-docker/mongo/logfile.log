@@ -219,3 +219,58 @@ Creating mongoDB ...
 [36mmongoDB  |[0m {"t":{"$date":"2023-05-03T10:18:12.674+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1683109092:674516][1:0x7f9b6694e700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 353, snapshot max: 353 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 124"}}
 [36mmongoDB  |[0m {"t":{"$date":"2023-05-03T10:19:12.744+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1683109152:744028][1:0x7f9b6694e700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 355, snapshot max: 355 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 124"}}
 [36mmongoDB  |[0m {"t":{"$date":"2023-05-03T10:20:12.818+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1683109212:818082][1:0x7f9b6694e700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 357, snapshot max: 357 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 124"}}
+[36mmongoDB  |[0m {"t":{"$date":"2023-05-03T10:21:12.897+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1683109272:897834][1:0x7f9b6694e700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 359, snapshot max: 359 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 124"}}
+[36mmongoDB  |[0m {"t":{"$date":"2023-05-03T10:22:12.951+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1683109332:951893][1:0x7f9b6694e700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 361, snapshot max: 361 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 124"}}
+Stopping mongoDB ... 
+Exception in thread Thread-4:
+Traceback (most recent call last):
+  File "site-packages/urllib3/connectionpool.py", line 677, in urlopen
+  File "site-packages/urllib3/connectionpool.py", line 426, in _make_request
+  File "<string>", line 3, in raise_from
+  File "site-packages/urllib3/connectionpool.py", line 421, in _make_request
+  File "http/client.py", line 1344, in getresponse
+  File "http/client.py", line 306, in begin
+  File "http/client.py", line 275, in _read_status
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "site-packages/requests/adapters.py", line 449, in send
+  File "site-packages/urllib3/connectionpool.py", line 725, in urlopen
+  File "site-packages/urllib3/util/retry.py", line 403, in increment
+  File "site-packages/urllib3/packages/six.py", line 734, in reraise
+  File "site-packages/urllib3/connectionpool.py", line 677, in urlopen
+  File "site-packages/urllib3/connectionpool.py", line 426, in _make_request
+  File "<string>", line 3, in raise_from
+  File "site-packages/urllib3/connectionpool.py", line 421, in _make_request
+  File "http/client.py", line 1344, in getresponse
+  File "http/client.py", line 306, in begin
+  File "http/client.py", line 275, in _read_status
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "threading.py", line 926, in _bootstrap_inner
+  File "threading.py", line 870, in run
+  File "compose/cli/log_printer.py", line 217, in watch_events
+  File "compose/project.py", line 510, in yield_loop
+  File "compose/project.py", line 478, in build_container_event
+  File "compose/container.py", line 48, in from_id
+  File "site-packages/docker/utils/decorators.py", line 19, in wrapped
+  File "site-packages/docker/api/container.py", line 758, in inspect_container
+  File "site-packages/docker/utils/decorators.py", line 46, in inner
+  File "site-packages/docker/api/client.py", line 230, in _get
+  File "site-packages/requests/sessions.py", line 546, in get
+  File "site-packages/requests/sessions.py", line 533, in request
+  File "site-packages/requests/sessions.py", line 646, in send
+  File "site-packages/requests/adapters.py", line 498, in send
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+
+ERROR: for mongoDB  ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+Couldn't connect to Docker daemon at http+docker://localhost - is it running?
+
+If it's at a non-standard location, specify the URL with the DOCKER_HOST environment variable.
+Gracefully stopping... (press Ctrl+C again to force)

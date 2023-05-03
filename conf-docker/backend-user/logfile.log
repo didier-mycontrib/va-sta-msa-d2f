@@ -71,3 +71,10 @@ Creating backend-user-api ...
 [36mbackend-user-api |[0m Connected correctly to mongodb database
 [36mbackend-user-api |[0m POST login,login à verifier={"username":"didier","password":"pwd","roles":"admin"}
 [36mbackend-user-api |[0m cannot retreive KongOAuth2PluginToken
+Stopping backend-user-api ... 
+
+ERROR: for backend-user-api  ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+Couldn't connect to Docker daemon at http+docker://localhost - is it running?
+
+If it's at a non-standard location, specify the URL with the DOCKER_HOST environment variable.
+Gracefully stopping... (press Ctrl+C again to force)
