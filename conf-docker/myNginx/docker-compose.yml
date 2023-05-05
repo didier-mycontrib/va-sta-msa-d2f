@@ -27,3 +27,4 @@ services:
           - myNginx.server.host
           - myNginx.host
           - myNginx
+          - www.d-defrance.fr
