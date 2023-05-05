@@ -13,3 +13,4 @@ PAS ACTIVE: 8998 (8998 en interne) pour des access à jenkins console (:8080 ins
 8230 (idem en interne) pour des access directs au backend qcm-api
 8231 (idem en interne) pour des access directs au backend ddc-api
 8232 (idem en interne) pour des access directs au backend user-api (auth)
+8233 (idem en interne) pour des access directs au backend tp-api (devise,product)
