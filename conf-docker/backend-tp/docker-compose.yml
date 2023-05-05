@@ -1,0 +1,27 @@
+version: '3.4'
+# with docker-compose 2.1 depends-on with condition like service_healthy
+# since docker-compose 3 depends-on with no more condition
+# since version 3 , needs to ajust healthcheck/interval,timeout,retries
+# healthcheck/start_period depuis v4.3
+
+networks:
+  mynetwork:
+    external: true
+    
+services:
+      
+  tp-api:
+    build : ../../local-git-repositories/tp-api
+#   image: xyz/backend-tp-api
+    restart: always
+    container_name: backend-tp-api
+    environment:
+      PORT : 8233
+      MONGODB_URL: mongodb://root:root@mongoDB.host:27017
+    networks:
+      mynetwork:
+        aliases:
+          - backend-tp-api.api.host
+          - backend-tp-api.api.service
+    ports:
+      - "8233:8233"
