@@ -21,11 +21,11 @@ services:
       PORT : 8233
       MONGODB_URL: mongodb://root:root@mongoDB.host:27017
     networks:
-      - mynetwork:
-          aliases:
-            - backend-tp-api.api.host
-            - backend-tp-api.api.service
-      - host:
+      mynetwork:
+        aliases:
+          - backend-tp-api.api.host
+          - backend-tp-api.api.service
+      host:
     ports:
       - "8233:8233"
     extra_hosts:
