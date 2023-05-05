@@ -25,3 +25,5 @@ services:
           - backend-tp-api.api.service
     ports:
       - "8233:8233"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
