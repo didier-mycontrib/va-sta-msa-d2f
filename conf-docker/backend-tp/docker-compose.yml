@@ -5,10 +5,10 @@ version: '3.4'
 # healthcheck/start_period depuis v4.3
 
 networks:
-  - mynetwork:
-      external: true
-  - host:
-      external: true
+  mynetwork:
+    external: true
+  host:
+    external: true
     
 services:
       
