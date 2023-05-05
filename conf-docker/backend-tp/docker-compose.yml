@@ -27,3 +27,4 @@ services:
       - "8233:8233"
     extra_hosts:
       - "host.docker.internal:host-gateway"
+      - "www.d-defrance.fr:46.226.104.105"
