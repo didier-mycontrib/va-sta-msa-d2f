@@ -5,8 +5,10 @@ version: '3.4'
 # healthcheck/start_period depuis v4.3
 
 networks:
-  mynetwork:
-    external: true
+  - mynetwork:
+      external: true
+  - host:
+      external: true
     
 services:
       
@@ -19,10 +21,11 @@ services:
       PORT : 8233
       MONGODB_URL: mongodb://root:root@mongoDB.host:27017
     networks:
-      mynetwork:
-        aliases:
-          - backend-tp-api.api.host
-          - backend-tp-api.api.service
+      - mynetwork:
+          aliases:
+            - backend-tp-api.api.host
+            - backend-tp-api.api.service
+      - host:
     ports:
       - "8233:8233"
     extra_hosts:
