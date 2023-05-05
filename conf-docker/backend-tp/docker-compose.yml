@@ -25,7 +25,6 @@ services:
         aliases:
           - backend-tp-api.api.host
           - backend-tp-api.api.service
-      host:
     ports:
       - "8233:8233"
     extra_hosts:
