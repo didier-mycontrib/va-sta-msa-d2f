@@ -25,5 +25,74 @@
     },
     "notBefore" : 0,
     "groups" : [ ]
+  }, {
+    "id" : "44340b66-e753-4882-8c37-8bc29cd4be7a",
+    "createdTimestamp" : 1683213016435,
+    "username" : "admin1",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "jean",
+    "lastName" : "Bon",
+    "email" : "jean.bon@mycompany.com",
+    "credentials" : [ {
+      "id" : "b25431ba-54e5-473e-b637-2d1480ee5de2",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1683213042861,
+      "secretData" : "{\"value\":\"Lf88CSvDSeFOjiWD879sxQLNJ9D3Qkk8c0czfX0NnDdCMXrEtzD7gkKW76cBwrGqdv81jTgkPRwL1MfUrZ222Q==\",\"salt\":\"QsG8kRtXpO462kl9MX+5dg==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-sandboxrealm" ],
+    "notBefore" : 0,
+    "groups" : [ "/admin_of_sandoxrealm" ]
+  }, {
+    "id" : "ce3a32fc-da77-4c06-a755-6f3341e96a0f",
+    "createdTimestamp" : 1683230813034,
+    "username" : "mgr1",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "axelle",
+    "lastName" : "Aire",
+    "email" : "axelle.aire@worldcompany.com",
+    "credentials" : [ {
+      "id" : "b3684889-75d5-4f46-aa7e-7a201ac9e80a",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1683230832087,
+      "secretData" : "{\"value\":\"g8aEF/K2j1kmcWgIiQUcAwBkTISrK3g4sf0tXCW59/5IaLjC1iHdS89Z66Vx8sz1Iv++UcEi529/PCN6+KkeLg==\",\"salt\":\"S1Dbd15BUzEoqsbrVUxq8g==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-sandboxrealm" ],
+    "notBefore" : 0,
+    "groups" : [ "/manager_of_sandboxrealm" ]
+  }, {
+    "id" : "1017814a-55fc-423f-acfd-31f2e32bfc06",
+    "createdTimestamp" : 1683230927666,
+    "username" : "user1",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "lucky",
+    "lastName" : "Luck",
+    "email" : "lucky.luck@worldcompany.com",
+    "credentials" : [ {
+      "id" : "4b4fbac7-9e5f-4cd0-916a-c751dbc98d09",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1683230948397,
+      "secretData" : "{\"value\":\"Xak1D7ajJ3wfOjXPOrHQ/0e+RWPg78YtgtQhWWAbp6XbfdSc/bb6OmxmrJIA9PmrULcktAXEsGGKE9tcKXYOUg==\",\"salt\":\"vzVBotw/excaehhP/kNL4Q==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-sandboxrealm" ],
+    "notBefore" : 0,
+    "groups" : [ "/user_of_sandboxrealm" ]
   } ]
 }
