@@ -63,8 +63,9 @@ https://www.d-defrance.fr:443/keycloak/admin/sandboxrealm/console (admin/admin)
 https://www.d-defrance.fr/keycloak/realms/myrealm/.well-known/openid-configuration
 https://www.d-defrance.fr/keycloak/realms/d2frealm/.well-known/openid-configuration
 https://www.d-defrance.fr
+https://www.d-defrance.fr/ddc-app , qcm-app , tp-app
 https://www.d-defrance.fr/tp/devise-api/public/devise
 https://www.d-defrance.fr/tp/product-api/public/product
-https://www.d-defrance.fr/tp/html/index.html
+https://www.d-defrance.fr/tp/tp-api-html/index.html
  
 
