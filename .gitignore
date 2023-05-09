@@ -4,6 +4,8 @@ conf-docker/myNginx/my-nginx/ddc-app
 conf-docker/myNginx/my-nginx/ddc-app/*
 conf-docker/myNginx/my-nginx/qcm-app
 conf-docker/myNginx/my-nginx/qcm-app/*
+conf-docker/myNginx/my-nginx/tp-app
+conf-docker/myNginx/my-nginx/tp-app/*
 */*.log
 */.gitignore
 **/logfile.log

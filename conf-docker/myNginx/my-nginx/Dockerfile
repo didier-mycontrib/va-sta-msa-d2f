@@ -5,6 +5,8 @@ FROM nginx:1.24
 
 #copy angular app :
 COPY ddc-app/ /usr/share/nginx/html/ddc-app/
+COPY tp-app/ /usr/share/nginx/html/tp-app/
+#COPY qcm-app/ /usr/share/nginx/html/qcm-app/
 COPY index.html /usr/share/nginx/html
 
 #copy docker-nginx.conf for reverse-proxy 
