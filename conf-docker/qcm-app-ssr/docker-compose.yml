@@ -1,0 +1,23 @@
+#Rappel: -p host_port:container_port
+
+networks:
+  mynetwork:
+    external: true
+    
+services:
+      
+  qcm-api:
+    #build : ../../local-git-repositories/qcm-app
+    image: didierdefrance69/qcm-app:1
+    container_name: frontend-qcm-app
+    restart: always
+    environment:
+      PORT : 4002
+    networks:
+      mynetwork:
+        aliases:
+          - qcm-app.frontend
+    ports:
+      - "4002:4000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
