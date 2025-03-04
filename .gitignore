@@ -7,6 +7,7 @@ conf-docker/myNginx/my-nginx/qcm-app/*
 conf-docker/myNginx/my-nginx/tp-app
 conf-docker/myNginx/my-nginx/tp-app/*
 */*.log
+**/*.log
 */.gitignore
 **/logfile.log
 *.box
