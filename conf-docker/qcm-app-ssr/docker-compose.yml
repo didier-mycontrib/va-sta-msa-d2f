@@ -13,12 +13,12 @@ services:
     container_name: frontend-qcm-app
     restart: always
     environment:
-      PORT : 4002
+      PORT : 4000
     networks:
       mynetwork:
         aliases:
           - qcm-app.frontend
     ports:
-      - "4002:4000"
+      - "4000:4000"
     extra_hosts:
       - "host.docker.internal:host-gateway"
