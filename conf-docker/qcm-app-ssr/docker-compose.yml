@@ -1,3 +1,4 @@
+version: '3.4'
 #Rappel: -p host_port:container_port
 
 networks:
@@ -6,7 +7,7 @@ networks:
     
 services:
       
-  qcm-api:
+  qcm-app:
     #build : ../../local-git-repositories/qcm-app
     image: didierdefrance69/qcm-app:1
     container_name: frontend-qcm-app
