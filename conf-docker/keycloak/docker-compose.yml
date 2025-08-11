@@ -36,6 +36,9 @@ services:
       KEYCLOAK_ADMIN_PASSWORD: admin
       KC_PROXY_HEADERS: xforwarded
       KC_HTTP_ENABLED: 'true'
+      KC_HOSTNAME: www.d-defrance.fr
+      KC_HOSTNAME_STRICT: 'false'
+      KC_HOSTNAME_STRICT_HTTPS: 'false'
       
     command: 
       - start-dev 
@@ -46,12 +49,10 @@ services:
       #- --help
       #- --log-level=debug
       - --http-relative-path=/keycloak
-      #URL exposée via Kong
-      - --hostname-url=https://www.d-defrance.fr/keycloak
-      - --hostname-admin-url=https://www.d-defrance.fr/keycloak
+      #URL exposée via reverse proxy (ex: nginx) : https://www.d-defrance.fr/keycloak
       #- --hostname-strict-backchannel=true
       #- --hostname-url=http://d2f2021/keycloak
-      #pas besoin de certificats dans keycloak en mode edge si certificate.pem dans kong
+      #pas besoin de certificats dans keycloak en mode edge si certificate.pem dans reverse proxy
       #- --https-certificate-file=/var/certs/certfile.pem 
       #- --https-certificate-key-file=/var/certs/keyfile.pem
       #- --db=postgres
