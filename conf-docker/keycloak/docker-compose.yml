@@ -8,15 +8,21 @@ networks:
 services:
 
   ###################
-  # keycloak server
-  # NB: CPU does not support x86-64-v2 with 21.0.1 , no problem with 20.0.3 and below
-  # NB: l'ancienne option --proxy edge signifiait https du client au reverse-proxy puis http du reverse-proxy à keycloak
-  #     maintenant il faut mettre KC_PROXY_HEADERS=xforwarded et surtout KC_HTTP_ENABLED=true
+  # keycloak server maintenant en version 26.3.2 de 2005
+  # ancienne config (now depreceted pour ancienne version 20.0.3):
+  #  option --proxy edge 
+  #   signifiait https du client au reverse-proxy puis http du reverse-proxy à keycloak
+  #     maintenant il faut mettre KC_PROXY_HEADERS=forwarded et surtout KC_HTTP_ENABLED=true
   # NB: --hostname-url=https://www.d-defrance.fr/keycloak ou autre très importante
   # pour que les redirections et que le contenu de /.well-known/openid-configuration
   # soient cohérents vis à vis de l'url d'accès à keycloak sur le reverse-proxy / api-gateway)
   # la variante --hostname-admin-url est utile pour le bon focntionnement de la console d'admin (bonnes redirections)
   # voir https://www.keycloak.org/server/reverseproxy
+  #
+  # config actuelle (pour version 26.3.2):
+  # plus d'option --hostname-url mais hostname interprétée comme url si cela commence par http:// ou https
+  # plus s'option --proxy edge mais KC_PROXY_HEADERS=forwarded et surtout KC_HTTP_ENABLED=true
+  # --hostname-backchannel-dynamic=true est une option importante et utile
   #
   # --http-relative-path=/keycloak ou /auth pour que toutes des urls de keycloak commencent par
   # /keycloak ou /auth (même sans proxy)
@@ -35,33 +41,24 @@ services:
     ports:
       - "8989:8989"
     environment:
-      #KEYCLOAK_ADMIN: admin (deprecated)
+      #KEYCLOAK_ADMIN: admin (deprecated , remplace par KC_BOOTSTRAP_ADMIN_USERNAME = username temp)
       KC_BOOTSTRAP_ADMIN_USERNAME: admin
-      #KEYCLOAK_ADMIN_PASSWORD: admin (deprecated)
+      #KEYCLOAK_ADMIN_PASSWORD: admin (deprecated , remplace par KC_BOOTSTRAP_ADMIN_PASSWORD = password temp)
       KC_BOOTSTRAP_ADMIN_PASSWORD: admin
       KC_PROXY_HEADERS: forwarded
-      #HTTP_ADDRESS_FORWARDING: 'true'
       KC_HTTP_ENABLED: 'true'
       KC_HOSTNAME: https://www.d-defrance.fr/keycloak
-      #KC_HOSTNAME_STRICT: false
-      #KC_HOSTNAME_STRICT_HTTPS: false
+
       
     command: 
       - start-dev 
       - --http-port=8989
       - --hostname-backchannel-dynamic=true
-      #- --proxy edge
       #- --hostname-strict=false (If hostname is specified, hostname-strict is effectively ignored)
-      #- --hostname-strict-https=false (old option, does not exist today)
       #- --help
       #- --log-level=debug
       - --http-relative-path=/keycloak 
-      #URL exposée via reverse proxy (ex: nginx) : https://www.d-defrance.fr/keycloak
-      #- --hostname-strict-backchannel=true
-      #- --hostname-url=http://d2f2021/keycloak
-      #pas besoin de certificats dans keycloak en mode edge si certificate.pem dans reverse proxy
-      #- --https-certificate-file=/var/certs/certfile.pem 
-      #- --https-certificate-key-file=/var/certs/keyfile.pem
+      #pas besoin de certificats dans keycloak en mode edge si certificate.pem dans reverse proxy (ex: nginx)
       #- --db=postgres
       #- --db-url=jdbc:postgresql://postgresqlKeycloak.host:5432/keycloak
       #- --db-username=keycloak
@@ -78,6 +75,6 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
       
-# A ameliorer :      
+# A peut être faire et encore ameliorer (pour éviter user: root):     
 # sudo mkdir -p /var/my-docker-volumes/keycloak/data
 # sudo chmod ag+w  /var/my-docker-volumes/keycloak/data      
