@@ -38,7 +38,7 @@ services:
       KC_HTTP_ENABLED: 'true'
       KC_HOSTNAME: www.d-defrance.fr
       KC_HOSTNAME_STRICT: 'false'
-      KC_HOSTNAME_STRICT_HTTPS: 'false'
+      #KC_HOSTNAME_STRICT_HTTPS: 'false'
       
     command: 
       - start-dev 
