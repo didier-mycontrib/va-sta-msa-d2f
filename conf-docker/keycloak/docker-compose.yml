@@ -22,11 +22,14 @@ services:
   # /keycloak ou /auth (même sans proxy)
   #
   #lien avec base postgres un peu testé (opérationnel) mais désactivé pour faible conso mémoire
+  #
+  # user:root in order to create file /opt/keycloak/data/h2 inside of /opt/keycloak/data
   ###################
   keycloakauth:
     #image: quay.io/keycloak/keycloak:21.0.1
     #image: quay.io/keycloak/keycloak:20.0.3
     image: quay.io/keycloak/keycloak:26.3.2
+    user: root
     restart: always
     container_name: keycloak
     ports:
@@ -37,14 +40,14 @@ services:
       KC_PROXY_HEADERS: xforwarded
       KC_HTTP_ENABLED: 'true'
       KC_HOSTNAME: www.d-defrance.fr
-      KC_HOSTNAME_STRICT: 'false'
+      #KC_HOSTNAME_STRICT: 'false'
       #KC_HOSTNAME_STRICT_HTTPS: 'false'
       
     command: 
       - start-dev 
       - --http-port=8989
       #- --proxy edge
-      - --hostname-strict=false
+      #- --hostname-strict=false (If hostname is specified, hostname-strict is effectively ignored)
       #- --hostname-strict-https=false (old option, does not exist today)
       #- --help
       #- --log-level=debug
