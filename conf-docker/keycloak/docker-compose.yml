@@ -10,7 +10,8 @@ services:
   ###################
   # keycloak server
   # NB: CPU does not support x86-64-v2 with 21.0.1 , no problem with 20.0.3 and below
-  # NB: --proxy edge signifie https du client au reverse-proxy puis http du reverse-proxy à keycloak
+  # NB: l'ancienne option --proxy edge signifiait https du client au reverse-proxy puis http du reverse-proxy à keycloak
+  #     maintenant il faut mettre KC_PROXY_HEADERS=xforwarded et surtout KC_HTTP_ENABLED=true
   # NB: --hostname-url=https://www.d-defrance.fr/keycloak ou autre très importante
   # pour que les redirections et que le contenu de /.well-known/openid-configuration
   # soient cohérents vis à vis de l'url d'accès à keycloak sur le reverse-proxy / api-gateway)
@@ -32,12 +33,14 @@ services:
       - "8989:8989"
     environment:
       KEYCLOAK_ADMIN: admin 
-      KEYCLOAK_ADMIN_PASSWORD: admin     
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_PROXY_HEADERS: xforwarded
+      KC_HTTP_ENABLED: 'true'
       
     command: 
       - start-dev 
       - --http-port=8989
-      - --proxy edge
+      #- --proxy edge
       - --hostname-strict=false
       - --hostname-strict-https=false
       #- --help
