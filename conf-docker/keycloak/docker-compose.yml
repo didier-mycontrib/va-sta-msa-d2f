@@ -42,7 +42,7 @@ services:
       KC_PROXY_HEADERS: forwarded
       #HTTP_ADDRESS_FORWARDING: 'true'
       KC_HTTP_ENABLED: 'true'
-      KC_HOSTNAME: www.d-defrance.fr
+      KC_HOSTNAME: www.d-defrance.fr/keycloak
       #KC_HOSTNAME_STRICT: false
       #KC_HOSTNAME_STRICT_HTTPS: false
       
@@ -54,7 +54,7 @@ services:
       #- --hostname-strict-https=false (old option, does not exist today)
       #- --help
       #- --log-level=debug
-      #- --http-relative-path=/keycloak (default is /)
+      #- --http-relative-path=/keycloak (default is / or with KC_HOSTNAME )
       #URL exposée via reverse proxy (ex: nginx) : https://www.d-defrance.fr/keycloak
       #- --hostname-strict-backchannel=true
       #- --hostname-url=http://d2f2021/keycloak
