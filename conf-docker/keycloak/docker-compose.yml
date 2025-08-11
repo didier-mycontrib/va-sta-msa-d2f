@@ -49,12 +49,13 @@ services:
     command: 
       - start-dev 
       - --http-port=8989
+      - --hostname-backchannel-dynamic true
       #- --proxy edge
       #- --hostname-strict=false (If hostname is specified, hostname-strict is effectively ignored)
       #- --hostname-strict-https=false (old option, does not exist today)
       #- --help
       #- --log-level=debug
-      #- --http-relative-path=/keycloak (default is / or with KC_HOSTNAME )
+      - --http-relative-path=/keycloak 
       #URL exposée via reverse proxy (ex: nginx) : https://www.d-defrance.fr/keycloak
       #- --hostname-strict-backchannel=true
       #- --hostname-url=http://d2f2021/keycloak
