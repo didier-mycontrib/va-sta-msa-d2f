@@ -42,7 +42,7 @@ services:
       KC_PROXY_HEADERS: forwarded
       #HTTP_ADDRESS_FORWARDING: 'true'
       KC_HTTP_ENABLED: 'true'
-      KC_HOSTNAME: www.d-defrance.fr/keycloak
+      KC_HOSTNAME: https://www.d-defrance.fr/keycloak
       #KC_HOSTNAME_STRICT: false
       #KC_HOSTNAME_STRICT_HTTPS: false
       
