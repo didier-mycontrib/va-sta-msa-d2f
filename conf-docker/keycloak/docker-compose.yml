@@ -42,7 +42,7 @@ services:
       - --http-port=8989
       #- --proxy edge
       - --hostname-strict=false
-      - --hostname-strict-https=false
+      #- --hostname-strict-https=false (old option, does not exist today)
       #- --help
       #- --log-level=debug
       - --http-relative-path=/keycloak
