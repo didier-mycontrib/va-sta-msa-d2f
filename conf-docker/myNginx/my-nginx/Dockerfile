@@ -1,4 +1,4 @@
-FROM nginx:1.24
+FROM nginx:1.29
 
 #adding ping and curl command for debug via docker run -it .... /bin/bash
 #RUN apt-get update && apt-get install -y iputils-ping && apt-get install -y curl
