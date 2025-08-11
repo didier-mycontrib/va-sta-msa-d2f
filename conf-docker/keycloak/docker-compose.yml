@@ -24,7 +24,8 @@ services:
   ###################
   keycloakauth:
     #image: quay.io/keycloak/keycloak:21.0.1
-    image: quay.io/keycloak/keycloak:20.0.3
+    #image: quay.io/keycloak/keycloak:20.0.3
+    image: quay.io/keycloak/keycloak:26.3.2
     restart: always
     container_name: keycloak
     ports:
