@@ -39,9 +39,9 @@ services:
       KC_BOOTSTRAP_ADMIN_USERNAME: admin
       #KEYCLOAK_ADMIN_PASSWORD: admin (deprecated)
       KC_BOOTSTRAP_ADMIN_PASSWORD: admin
-      KC_PROXY_HEADERS: xforwarded
+      KC_PROXY_HEADERS: 'xforwarded'
       KC_HTTP_ENABLED: 'true'
-      KC_HOSTNAME: www.d-defrance.fr
+      KC_HOSTNAME: 'www.d-defrance.fr'
       #KC_HOSTNAME_STRICT: 'false'
       #KC_HOSTNAME_STRICT_HTTPS: 'false'
       
