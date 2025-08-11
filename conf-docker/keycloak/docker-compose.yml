@@ -54,7 +54,7 @@ services:
       #- --hostname-strict-https=false (old option, does not exist today)
       #- --help
       #- --log-level=debug
-      - --http-relative-path=/keycloak
+      #- --http-relative-path=/keycloak (default is /)
       #URL exposée via reverse proxy (ex: nginx) : https://www.d-defrance.fr/keycloak
       #- --hostname-strict-backchannel=true
       #- --hostname-url=http://d2f2021/keycloak
