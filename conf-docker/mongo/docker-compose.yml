@@ -1,4 +1,3 @@
-version: '3.4'
 #NB: -port: host_port:container_port
 #NB: dans future V2 , améliorer via volumes et sauvegardes
 
@@ -12,9 +11,11 @@ services:
   # mongoDB server
   # url: mongodb://root:root@mongoDB_or_localhost:27017/
   #NB: some CPU are not compatible with mongo 5 and 6 (AVX is required)--> using mongo 4.4
+  # 8.0.12 ??? multu-platform ????
   ###################
   mongo:
-    image: mongo:4.4
+    #image: mongo:4.4
+    image: mongo:8.0.12
     restart: always
     container_name: mongoDB
     environment:
