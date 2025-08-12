@@ -11,8 +11,8 @@ networks:
 services:
       
   qcm-api:
-    build : ../../local-git-repositories/qcm-api
-#   image: xyz/backend-qcm-api
+    #build : ../../local-git-repositories/qcm-api
+    image: didierdefrance69/qcm_api:1
     container_name: backend-qcm-api
     restart: always
     environment:

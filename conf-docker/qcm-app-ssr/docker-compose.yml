@@ -9,7 +9,7 @@ services:
       
   qcm-app:
     #build : ../../local-git-repositories/qcm-app
-    image: didierdefrance69/qcm-app:1
+    image: didierdefrance69/qcm_app:1
     container_name: frontend-qcm-app
     restart: always
     environment:
