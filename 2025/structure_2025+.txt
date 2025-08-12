@@ -2,5 +2,6 @@ Socle : VPS Ubuntu >= 22.04.5
         et docker >= 28.0.1 
 ===========================
 mongo >= 8.0.12
-keycloak >= 
+nginx >= 1.29
+keycloak >= 26.3.2 
 
