@@ -45,7 +45,7 @@ services:
       KC_BOOTSTRAP_ADMIN_USERNAME: admin
       #KEYCLOAK_ADMIN_PASSWORD: admin (deprecated , remplace par KC_BOOTSTRAP_ADMIN_PASSWORD = password temp)
       KC_BOOTSTRAP_ADMIN_PASSWORD: admin
-      KC_PROXY_HEADERS: forwarded
+      KC_PROXY_HEADERS: xforwarded
       KC_HTTP_ENABLED: 'true'
       KC_HOSTNAME: https://www.d-defrance.fr/keycloak
 
