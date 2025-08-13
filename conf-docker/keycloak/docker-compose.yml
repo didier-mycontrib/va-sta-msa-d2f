@@ -47,7 +47,6 @@ services:
       KC_BOOTSTRAP_ADMIN_PASSWORD: admin
       KC_PROXY_HEADERS: forwarded
       KC_HTTP_ENABLED: 'true'
-      KC_HOSTNAME_STRICT_HTTPS: 'false'
       KC_HOSTNAME: https://www.d-defrance.fr/keycloak
 
       
