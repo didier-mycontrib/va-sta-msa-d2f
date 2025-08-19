@@ -1,0 +1,49 @@
+-----------
+Nginx :
+bien sécuriser l'accès SSL
+-----
+Keycloak:
+bien sécuriser la console d'admin (master)
+et
+prévoir volumes et sauvegardes
+----------
+MongoDB:
+prévoir volumes et sauvegardes
+ET
+en prod, le server essentiel mongoDB fonctionne au sein du container "MongoDB" 
+et est vu comme un de ces hostnames : mongoDB.server.host , mongoDB.host,  MongoDB
+sur le réseau docker "mynetwork" avec le port standard 27017.
+Ce serveur prend en charge plusieurs bases (qcm_db , …)
+NB: pour la version sécurisée , on utilisera 
+  secrets:
+      - mongo_secret_pwd
+ environment:
+   MONGO_INITDB_ROOT_PASSWORD_FILE: /run/secrets/mongo_secret_pwd
+et 
+secrets:
+  mongo_secret_pwd:
+    file: ./mongo_secret_pwd.sec.txt
+--------------
+coté "dev" , un backend (ex: qcm-api) , utilisera par défaut cette url mongodb://127.0.0.1:27017
+ceci dit au lancement, cette url sera modifiable
+pour la prod,
+ avec la variable d'env MONGODB_URL
+qui vaudra par exemple mongodb://root:root@mongoDB.host:27017
+ou mieux encore
+MONGODB_HOSTNAME=mongoDB.host
+MONGODB_PORT=27017
+MONGODB_USERNAME=root
+MONGODB_PASSWORD=root ou mieux encore MONGODB_PASSWORD_FILE: /run/secrets/mongo_secret_pwd
+---------------
+Un frontend angular se connectera à un backend de la façon suivante:
+- en dev , selon proxy.conf.json de ngserve
+- en ic (cypress), avec url rigide du backend ou selon prise en compte de environment.XYZ (API_KEY ou ...)
+- en prod , avec url rigide du backend ou ….
+
+Variantes à prévoir (si possible):
+   API_KEY
+   BACKEND_URL
+   OAUTH2_REALM
+   ...
+
+
