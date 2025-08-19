@@ -12,4 +12,3 @@ sudo mkdir -p /var/certs
 
 #for tar backup of mongo data:
 sudo mkdir -p /var/my-backups
-sudo chmod 755 /var/my-backups
