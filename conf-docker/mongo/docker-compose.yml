@@ -1,4 +1,4 @@
-version: '3'
+
 #memo
 #NB: -port: host_port:container_port
 # ${VAR_NAME:-defaultvalueIfNotSetAndNotEmpty}
@@ -29,8 +29,8 @@ services:
     secrets:
       - mongo_secret_pwd
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      #MONGO_INITDB_ROOT_USERNAME: "${ROOT_USERNAME:-root}"
+      #MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_USERNAME: "${ROOT_USERNAME:-root}"
       #MONGO_INITDB_ROOT_PASSWORD: root
       #MONGO_INITDB_ROOT_PASSWORD: "${ROOT_PWD:-root}"
       MONGO_INITDB_ROOT_PASSWORD_FILE: /run/secrets/mongo_secret_pwd
