@@ -3,7 +3,7 @@
 #NB: -port: host_port:container_port
 # ${VAR_NAME:-defaultvalueIfNotSetAndNotEmpty}
 # ${ROOT_USERNAME} (empty by default) may be override with .env file (ROOT_USERNAME=rootOrOtherValue)
-#NB: dans future V2 , améliorer via volumes et sauvegardes
+# volumes /var/my-docker-volumes/mongo/data/db à préparer pour sauvegardes
 
 networks:
   mynetwork:
@@ -15,6 +15,10 @@ secrets:
   mongo_secret_pwd:
     file: ../secrets/.mongo_secret_pwd  
       
+      
+volumes:
+  mongo_data_db:
+  
 services:
 
   ###################
@@ -38,7 +42,6 @@ services:
       - 27017:27017
     volumes:
       - /var/my-docker-volumes/mongo/data/db:/data/db
-      - /var/my-docker-volumes/mongo/data/configdb:/data/configdb
     networks:
       mynetwork:
         aliases:
