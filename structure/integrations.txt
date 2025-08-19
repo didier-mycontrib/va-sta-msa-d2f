@@ -8,7 +8,7 @@ et
 prévoir volumes et sauvegardes
 ----------
 MongoDB:
-prévoir volumes et sauvegardes
+avec scripts de sauvegardes (/var/my-backups/...tar)
 ET
 en prod, le server essentiel mongoDB fonctionne au sein du container "MongoDB" 
 et est vu comme un de ces hostnames : mongoDB.server.host , mongoDB.host,  MongoDB
@@ -37,8 +37,9 @@ MONGODB_PASSWORD=root ou mieux encore MONGODB_PASSWORD_FILE: /run/secrets/mongo_
 ---------------
 Un frontend angular se connectera à un backend de la façon suivante:
 - en dev , selon proxy.conf.json de ngserve
-- en ic (cypress), avec url rigide du backend ou selon prise en compte de environment.XYZ (API_KEY ou ...)
-- en prod , avec url rigide du backend ou ….
+- en ic (cypress), avec url du backend selon config reverse-proxy de http-server ou autre
+et peut être selon prise en compte de environment.XYZ (API_KEY ou ...)
+- en prod , avec url du backend selon config du reverse proxy (nginx ou autre)
 
 Variantes à prévoir (si possible):
    API_KEY
