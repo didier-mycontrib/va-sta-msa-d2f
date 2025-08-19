@@ -9,3 +9,7 @@ sudo chmod 755 /var/my-docker-volumes/keycloak/data/backup
 sudo ln -s  /var/my-docker-volumes/keycloak/data/backup /base/conf-docker/keycloak/backup/backup-symlink
 
 sudo mkdir -p /var/certs
+
+#for tar backup of mongo data:
+sudo mkdir -p /var/my-backups
+sudo chmod 755 /var/my-backups
