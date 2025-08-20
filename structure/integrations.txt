@@ -36,15 +36,12 @@ MONGODB_USERNAME=root
 MONGODB_PASSWORD=root ou mieux encore MONGODB_PASSWORD_FILE: /run/secrets/mongo_secret_pwd
 ---------------
 Un frontend angular se connectera à un backend de la façon suivante:
-- en dev , selon proxy.conf.json de ngserve
+- en dev , selon proxy.conf.json de nerve 
 - en ic (cypress), avec url du backend selon config reverse-proxy de http-server ou autre
-et peut être selon prise en compte de environment.XYZ (API_KEY ou ...)
 - en prod , avec url du backend selon config du reverse proxy (nginx ou autre)
 
-Variantes à prévoir (si possible):
-   API_KEY
-   BACKEND_URL
-   OAUTH2_REALM
+Peut être (plus tard , pas prioritaire) , variantes à prévoir (si possible):
+   API_KEY ,  BACKEND_URL,  OAUTH2_REALM
    ...
 
 

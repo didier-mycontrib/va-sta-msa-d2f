@@ -1,1 +1,0 @@
-docker image rm didierdefrance69/qcm_app:1
