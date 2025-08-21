@@ -1,23 +1,31 @@
-version: '3.4'
-# with docker-compose 2.1 depends-on with condition like service_healthy
-# since docker-compose 3 depends-on with no more condition
-# since version 3 , needs to ajust healthcheck/interval,timeout,retries
-# healthcheck/start_period depuis v4.3
 
 networks:
   mynetwork:
     external: true
     
+# ../secrets/.mongo_secret_pwd (NOT IN GIT !!!) 
+# should contains mongoDB password (root or otherValue)   
+secrets:
+  mongo_secret_pwd:
+    file: ../secrets/.mongo_secret_pwd     
+    
 services:
       
   tp-api:
-    build : ../../local-git-repositories/tp-api
-#   image: xyz/backend-tp-api
+    #build : ../../local-git-repositories/tp-api
+    image: didierdefrance69/tp_api:1
     restart: always
     container_name: backend-tp-api
+    secrets:
+      - mongo_secret_pwd
     environment:
       PORT : 8233
-      MONGODB_URL: mongodb://root:root@mongoDB.host:27017
+      #MONGODB_URL: mongodb://root:root@mongoDB.host:27017
+      MONGODB_HOSTNAME: mongoDB.host
+      MONGODB_PORT: 27017
+      MONGODB_USERNAME: root
+      #MONGODB_PASSWORD: root
+      MONGODB_PASSWORD_FILE: /run/secrets/mongo_secret_pwd
     networks:
       mynetwork:
         aliases:
@@ -27,4 +35,3 @@ services:
       - "8233:8233"
     extra_hosts:
       - "host.docker.internal:host-gateway"
-#     - "www.d-defrance.fr:46.226.104.105"
