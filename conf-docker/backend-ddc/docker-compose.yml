@@ -26,6 +26,9 @@ services:
       MONGODB_USERNAME: root
       #MONGODB_PASSWORD: root
       MONGODB_PASSWORD_FILE: /run/secrets/mongo_secret_pwd
+    volumes:
+      - /var/my-docker-volumes/ddc-app-posts:/usr/src/app/html/mnt_posts
+      # /var/my-docker-volumes/ddc-app-posts needs to be prepared with with subdirectory images
     networks:
       mynetwork:
         aliases:
