@@ -9,3 +9,7 @@ tp-api, ddc-app , ddc-api , qcm-app , qcm-api built as docker image via Jenkins 
 ==========================
 ddc-app & qcm-app as angular ssr app (ddc-app : 4001 , qcm-app : 4000)
 
+=====
+https://www.d-defrance.fr/ddc-api-html/index.html --> open-api/swagger doc
+https://www.d-defrance.fr/qcm-api-html/index.html --> open-api/swagger doc
+
