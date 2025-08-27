@@ -1,0 +1,1 @@
+NB: certains scripts peuvent ne pas fonctionner à cause d'un éventuel manque d'authentification (via oauth2/keycloak)

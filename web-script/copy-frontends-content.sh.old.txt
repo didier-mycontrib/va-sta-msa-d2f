@@ -1,0 +1,2 @@
+sudo rm -rf /base/conf-docker/myNginx/my-nginx/tp-app
+sudo cp -r  /base/local-git-repositories/tp-app/dist/tp-app /base/conf-docker/myNginx/my-nginx/tp-app
