@@ -1,1 +1,0 @@
-sudo ufw-docker delete allow jenkins-cicd

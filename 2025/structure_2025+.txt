@@ -4,4 +4,8 @@ Socle : VPS Ubuntu >= 22.04.5
 mongo >= 8.0.12
 nginx >= 1.29
 keycloak >= 26.3.2 
+===========================
+tp-api, ddc-app , ddc-api , qcm-app , qcm-api built as docker image via Jenkins pipelines
+==========================
+ddc-app & qcm-app as angular ssr app (ddc-app : 4001 , qcm-app : 4000)
 
