@@ -4,7 +4,7 @@ FROM nginx:1.29
 #RUN apt-get update && apt-get install -y iputils-ping && apt-get install -y curl
 
 #copy angular app :
-COPY ddc-app/ /usr/share/nginx/html/ddc-app/
+#COPY ddc-app/ /usr/share/nginx/html/ddc-app/
 COPY tp-app/ /usr/share/nginx/html/tp-app/
 #COPY qcm-app/ /usr/share/nginx/html/qcm-app/
 COPY index.html /usr/share/nginx/html
