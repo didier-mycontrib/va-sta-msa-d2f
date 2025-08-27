@@ -1,4 +1,4 @@
 echo "************ qcm  ***************"
-curl http://localhost:8230/qcm-api/public/qcm
+curl http://localhost:8230/qcm-api/v1/public/qcms
 echo "************ qcmResults ***************"
-curl http://localhost:8230/qcm-api/private/qcm_results
+curl http://localhost:8230/qcm-api/v1/private/qcm_results
