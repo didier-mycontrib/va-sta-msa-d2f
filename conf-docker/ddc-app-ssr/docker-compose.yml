@@ -1,0 +1,23 @@
+#Rappel: -p host_port:container_port
+
+networks:
+  mynetwork:
+    external: true
+    
+services:
+      
+  ddc-app:
+    #build : ../../local-git-repositories/ddc-app
+    image: didierdefrance69/ddc_app:1
+    container_name: frontend-ddc-app
+    restart: always
+    environment:
+      PORT : 4001
+    networks:
+      mynetwork:
+        aliases:
+          - ddc-app.frontend
+    ports:
+      - "4001:4000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
