@@ -7,5 +7,4 @@ Pour contourner cela (en mode prod SANS WITHOUT_AUTH=yes), il faudrait :
   - se logger en tant qu'admin (d2f, …)
   - lancer le point d'entrée en "reinit" et éventuellement "refresh"
 
-===> mais quelques bugs à gérer pour cela ...
 ------

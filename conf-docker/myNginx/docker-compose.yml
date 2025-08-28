@@ -1,4 +1,3 @@
-version: '3.4'
 #NB: -port: host_port:container_port
 #NB: dans future V2 , améliorer via volumes et sauvegardes
 
