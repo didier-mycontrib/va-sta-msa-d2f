@@ -1,0 +1,48 @@
+ddc-api :8231 
+en mode dev,
+URL = http://localhost:8231/html/index.html
+et    http://localhost:8231/res-api/v1/public/ressources
+et    http://localhost:8231/news-api/v1/public/publications
+
+en mode prod:
+URL = https://www.d-defrance.fr/ddc-api-html/index.html
+et    https://www.d-defrance.fr/res-api/v1/public/ressources
+et    https://www.d-defrance.fr/news-api/v1/public/publications
+=====================================================================
+ddc-app :4001 , https://www.d-defrance.fr
+
+=====================
+qcm-api :8230
+en mode dev,
+URL = http://localhost:8230/html/index.html
+et    http://localhost:8230/qcm-api/v1/public/qcm
+
+en mode prod:
+URL = https://www.d-defrance.fr/qcm-api-html/index.html
+et    https://www.d-defrance.fr/qcm-api/v1/public/qcm
+====================
+qcm-app : :4001 , https://www.d-defrance.fr/qcm-app
+
+=================
+tp-api :8233
+en mode dev,
+URL = http://localhost:8233/html/index.html
+et    http://localhost:8233/tp/devise-api/v1/public/devises
+et    http://localhost:8233/tp/product-api/v1/public/products
+et    http://localhost:8233/tp/standalone-user-api/v1/public/users
+
+en mode prod:
+URL = https://www.d-defrance.fr/tp-api-html/index.html
+et    https://www.d-defrance.fr/tp/devise-api/v1/public/devises
+et    https://www.d-defrance.fr/tp/product-api/v1/public/products
+et    https://www.d-defrance.fr/tp/standalone-user-api/v1/public/users
+
+============
+keycloak :8989
+https://www.d-defrance.fr/keycloak
+=======
+mongo :27017
+====
+Nginx :80 et :443
+
+
